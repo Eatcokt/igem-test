@@ -1,0 +1,76 @@
+Project Description: Bioengineered E. coli for Formaldehyde Detection
+
+Introduction
+
+Formaldehyde is a hazardous air pollutant commonly found in indoor environments, originating from various sources such as building materials, furniture, and household products. Exposure to formaldehyde can cause adverse health effects, including respiratory and skin irritation, headaches, and even cancer. Therefore, developing a cost-effective and sensitive method for formaldehyde detection is a pressing need.
+
+This project aims to create a bioengineered E. coli strain capable of detecting formaldehyde using synthetic biology techniques. By incorporating formaldehyde-sensitive promoters into the bacteria's genetic circuit, we can develop a living sensor that produces a measurable output, such as fluorescence or color change, in response to formaldehyde.
+
+Formaldehyde-sensitive promoters
+
+To create a formaldehyde-sensing E. coli strain, we propose using one or more of the following formaldehyde-sensitive promoters:
+
+1. *frmRAB promoter*: The frmRAB operon is involved in formaldehyde detoxification in E. coli. The frmRAB promoter can be induced by the presence of formaldehyde, leading to the expression of the downstream genes.
+
+2. *hxlAB promoter*: The hxlAB operon encodes two enzymes involved in the degradation of formaldehyde. The hxlAB promoter can be induced by the presence of formaldehyde, leading to the expression of the downstream genes.
+
+By coupling these promoters to a reporter gene, such as GFP (green fluorescent protein) or LacZ (β-galactosidase), the engineered E. coli strain will produce a measurable output in response to formaldehyde levels.
+
+Project Goals
+
+1. *Design and construct genetic circuits*: Combine formaldehyde-sensitive promoters with reporter genes to create genetic circuits that respond to formaldehyde.
+
+2. *Transform E. coli with designed circuits*: Introduce the genetic circuits into E. coli and confirm successful integration.
+
+3. *Characterize the response of the engineered E. coli*: Determine the sensitivity, response time, and dynamic range of the bioengineered bacteria.
+
+4. *Optimize the sensor for practical applications*: Improve the performance of the sensor by adjusting the promoter-reporter system and incorporating necessary genetic modifications.
+
+Achieving Project Goals
+
+To achieve these goals, we will:
+
+1. Perform a thorough literature review to identify the best candidate promoters and reporter genes for formaldehyde detection.
+
+2. Design and synthesize the genetic constructs using standard molecular cloning techniques.
+
+3. Transform E. coli with the constructs, and screen for successful transformants using appropriate selection markers.
+
+4. Characterize the engineered E. coli strains by exposing them to varying formaldehyde concentrations and measuring the output (e.g., fluorescence or color change).
+
+5. Iterate on the design and optimization of the sensor to improve its performance for real-world applications.
+
+Inspiration from iGEM and other research
+
+Our project draws inspiration from several iGEM projects and research in the field of synthetic biology. The iGEM teams that have inspired our project include:
+
+- *iGEM 2016 NCKU_Tainan*: Developed an E. coli-based biosensor for detecting heavy metals in water, using a combination of metal-binding proteins and transcriptional regulators.
+
+- *iGEM 2019 Aachen*: Designed a modular biosensor platform for detecting various air pollutants, including volatile organic compounds (VOCs) and nitrogen oxides (NOx).
+
+Moreover, several research articles have reported the development of bacterial biosensors for detecting other pollutants, such as heavy metals, pesticides, and organic solvents. These findings demonstrate the potential of synthetic biology for creating sensitive, cost-effective, and environmentally friendly biosensors.
+
+Conclusion
+
+Our project aims to develop a bioengineered E. coli strain capable of detecting formaldehyde through the use of synthetic biology techniques. By constructing and optimizing formaldehyde-sensitive genetic circuits, we hope to create a living sensor that can provide a cost-effective and environmentally friendly solution for formaldehyde detection. The successful implementation of this project could have significant implications for monitoring air quality in homes, offices, and other indoor environments.
+
+Here are some formaldehyde-sensitive promoters that work in E. coli:
+
+- The E. coli adhE promoter: This promoter controls the expression of the adhE gene encoding a bifunctional acetaldehyde-CoA dehydrogenase. This promoter is repressed by formaldehyde and activated by ethanol.
+
+- The E. coli dhaB promoter: This promoter controls the expression of the dhaB gene encoding a dihydroxyacetone kinase. This promoter is repressed by formaldehyde.
+
+- The Pseudomonas putida formaldehyde dehydrogenase (fdhF) promoter: This promoter is repressed by formaldehyde and activated by methanol in P. putida. It also works in E. coli and shows formaldehyde-dependent repression. 
+
+- Hybrid promoters combining the -35 region of the E. coli placl promoter and the -10 region of the fdhF promoter: These hybrid promoters show strong repression by formaldehyde in E. coli.
+
+- The Bacillus subtilis hxlAB promoter: The B. subtilis hxlAB operon encodes enzymes for formaldehyde detoxification. Its promoter is repressed by formaldehyde and this regulation works when transferred to E. coli.
+
+- The Hansenula polymorpha formaldehyde dehydrogenase (fld) promoter: The H. polymorpha fld promoter is repressed by formaldehyde and activated by methanol. When transferred to E. coli, it retains formaldehyde regulation.
+
+- Tetracycline-inducible promoters with the TetR repressor mutated (N99I or E100I): These mutated TetR repressors bind formaldehyde with high affinity, thereby repressing tet promoters in response to formaldehyde. These systems work in E. coli.
+
+- The E. coli groESL promoter: This promoter shows some sensitivity to formaldehyde, likely due to the presence of CACC sequences in its -35 region which are known to bind the formaldehyde-responsive ArcA repressor.
+
+Those are some of the well-known and characterized formaldehyde-sensitive promoters that work in E. coli. Let me know if you need any clarification or additional details.
+
