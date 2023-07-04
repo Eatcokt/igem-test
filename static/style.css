@@ -1,12 +1,12 @@
 body { padding-top: 56px; }
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #343a40 !important; }
-.bg-hero { background-image: url('https://static.igem.wiki/teams/4813/wiki/style/slide1.jpeg');
+.bg-hero { background-image: url('https://static.igem.wiki/teams/4813/wiki/style/slide1.jpg');
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
-    position: top; }
+    background-position: center;
+    position: relative; }
 
 /* CALLOUT */
 .bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
