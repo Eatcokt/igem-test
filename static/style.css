@@ -28,13 +28,13 @@ footer a:hover { color: white; text-decoration: underline; }
 }
 .cell{
 position: relative;
-width: 400px;
+width: 200px;
 margin-top: 100px;
 }
 .cell__image{
     display: block;
     width: 100%;
-    
+    border-radius: 20%;
 }
 .overlay{
 position: absolute;
