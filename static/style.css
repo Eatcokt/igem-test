@@ -1,7 +1,7 @@
 body { padding-top: 56px; }
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #005e23 !important; }
-.bg-hero { background-image: url('https://static.igem.wiki/teams/4813/wiki/style/header03bg.jpg');
+.bg-hero { background-image: url("https://static.igem.wiki/teams/4813/wiki/bottom-logo.webp");
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@ body { padding-top: 56px; }
 .bd-callout p:last-child { margin-bottom:0 }
 .bd-callout code { border-radius:.25rem }
 .bd-callout+.bd-callout { margin-top:-.25rem }
-.bd-callout-info { border-left-color:#5bc0de }
+.bd-callout-info { border-left-color:#388e3c }
 .bd-callout-warning { border-left-color:#f0ad4e }
 .bd-callout-danger { border-left-color:#d9534f }
 
