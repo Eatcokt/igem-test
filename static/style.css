@@ -81,4 +81,55 @@ display: flex;
     width: 120%;
     margin-left: -10%;
 }
+.animated{
+    width: 200px;
+    height: 200 px;
+    background-position: center;
+    background-size: cover;
+}
 
+.fadeinleft{
+    animation: fadeinleft 1.2s both;
+    
+}
+@keyframes fadeinleft{
+    
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+.fadeintop{
+    background-image: url("photo.jpeg");
+    animation: fadeintop 1.2s both;
+    
+}
+@keyframes fadeintop{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+.fadeinright{
+    background-image: url("photo.jpeg");
+    animation: fadeinright 1.2s both;
+    
+}
+@keyframes fadeinright{
+    0%{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
