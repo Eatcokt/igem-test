@@ -81,12 +81,6 @@ display: flex;
     width: 120%;
     margin-left: -10%;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    height: 400px;
-}
 .animated{
     width: 200px;
     height: 200 px;
