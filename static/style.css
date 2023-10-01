@@ -62,7 +62,7 @@ opacity:1;
 }
 .overlay p{
 font-size: 1.5em;
-margin-top: -10%;
+margin-top: 0.25em;
 }
 .overlay > *{
 transform: translateY(20px);
@@ -80,6 +80,12 @@ display: flex;
 .text{
     width: 120%;
     margin-left: -10%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 400px;
 }
 .animated{
     width: 200px;
