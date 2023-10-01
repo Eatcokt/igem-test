@@ -35,6 +35,7 @@ margin-top: 100px;
     display: block;
     width: 100%;
     border-radius: 20%;
+    object-fit: cover;
 }
 .overlay{
 position: absolute;
@@ -51,6 +52,7 @@ align-items: center;
 justify-content: center;
 opacity:0;
 transition: opacity 0.25s;
+border-radius: 20%;
 }
 .overlay:hover{
 opacity:1;
