@@ -93,4 +93,21 @@ body {
 
 
 
+.gallery {
+            width: 100%;
+            display: grid;
+            flex-flow: row wrap;
+        }
+ 
+.gallerybox {
+
+            width: 100%;
+            padding: 10px;
+            margin: 8px;
+            box-shadow: 1px 1px 1px 1px green;
+ }
+
+
+
+
 
