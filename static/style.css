@@ -96,7 +96,7 @@ body {
 .gallery {
             width: 100%;
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row wrap-reverse;
         }
  
 .gallerybox {
@@ -104,7 +104,6 @@ body {
             width: 100%;
             padding: 10px;
             margin: 8px;
-            box-shadow: 1px 1px 1px 1px green;
  }
 
 
