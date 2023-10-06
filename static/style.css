@@ -103,7 +103,7 @@ body {
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.container{
+.hello{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -111,23 +111,23 @@ body {
     text-align: center;
     margin: 40px 20px 0 20px;
 }
-.container .heading{
+.hello .hi{
     width: 50%;
     padding-bottom: 50px;
 }
-.container .heading h3{
+.hello .hi h3{
     font-size: 3em;
     font-weight: bolder;
     border-bottom: 3px solid #222;
     padding-bottom: 10px;
 }
-.container .box{
+.hello .woo{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.container .box .dream{
+.hello .woo .dream{
     display: flex;
     flex-direction: column;
     width: 32.5%;
