@@ -18,7 +18,7 @@
 </div>
 <h1>Hardware</h1>
 <hr>
-<P> We have genetically modified E.coli so as to detect formaldehyde, a toxic chemical for organisms.  We constructed and transformed the recombinant plasmids pFrmR-dTomato and HxIR13A-dTomato into E.coli. The GM bacteria can synthesise red proteins and turn pink in the presence of formaldehyde. However, the process of producing red proteins requires a period of time so it has to be checked regularly. Thus, we decided to build a machine that can detect the colour change of the GM E.Coli.. By the auto detection of the colour change by the camera, we can know whether the surrounding air contains formaldehyde which is harmful for our health. If we can realise the presence of formaldehyde promptly, we can remove them as quickly as possible, which prevents the pollutants from harming our bodies. </P>
+<P> We have genetically modified <i>E.coli</i> so as to detect formaldehyde, a toxic chemical for organisms.  We constructed and transformed the recombinant plasmids pFrmR-dTomato and HxIR13A-dTomato into <i>E.coli</i>. The GM bacteria can synthesise red proteins and turn pink in the presence of formaldehyde. However, the process of producing red proteins requires a period of time so it has to be checked regularly. Thus, we decided to build a machine that can detect the colour change of the GM E.Coli.. By the auto detection of the colour change by the camera, we can know whether the surrounding air contains formaldehyde which is harmful for our health. If we can realise the presence of formaldehyde promptly, we can remove them as quickly as possible, which prevents the pollutants from harming our bodies. </P>
 
 <P>The aims of our project are summarised in the following:</P>
 
@@ -36,13 +36,13 @@
 Apart from that, we originally planned to use plastic as the material for the device.  Nevertheless, another investigation carried by other schoolmates uncovered that microplastic fragments will be produced from plastic products under UV light erosion[2].  These nanoplastics pollute the environment and lead to accumulation of them in animals.  Owing to that, we soon object to the idea and consider using cardboards to build up our device.  However, cardboards is vulnerable as it may be weakened by high humidity.  Lastly, we selected fiberboard as our building material because of its biodegradability.  Also, the fiberboard allows mass production by laser cutting. 
 </p>
 <center><img src="https://static.igem.wiki/teams/4813/wiki/hardware/slide20.jpeg" class="hardware--img">
-<p><u>FIgure 2. The petri dish containing <i>E.coli</i> is put in loading dock</u></p></center>
-<p>The transparent plastic petri dish which enables clear observation can be placed on the dock which makes the replacement of E.coli easily.  The petri dish is made in plastic as it  is cheaper and it is less vulnerable than glass petri dish, making it more durable. This avoids users getting hurt if the glass petri dish is broken accidentally. Besides, a white plate is placed under the Petri dish for the ESP32CAM to detect the colour of E.coli more clearly. Therefore, a clearer and a more accurate colour change can be detected easily by the ESP32CAM. Also, the petri dish can be replaced easily. 
+<p><u>FIgure 2. The petri dish containing <i><i>E.coli</i></i> is put in loading dock</u></p></center>
+<p>The transparent plastic petri dish which enables clear observation can be placed on the dock which makes the replacement of <i>E.coli</i> easily.  The petri dish is made in plastic as it  is cheaper and it is less vulnerable than glass petri dish, making it more durable. This avoids users getting hurt if the glass petri dish is broken accidentally. Besides, a white plate is placed under the Petri dish for the ESP32CAM to detect the colour of <i>E.coli</i> more clearly. Therefore, a clearer and a more accurate colour change can be detected easily by the ESP32CAM. Also, the petri dish can be replaced easily. 
 </p>
 <hr>
 <center><img src="https://static.igem.wiki/teams/4813/wiki/hardware/slide21.jpeg" class="hardware--img">
 <p><u>Figure 3. The fan help drawing air in the machine</u></p></center>
-<p>Formaldehyde is highly soluble in water, therefore the GM E. coli in bacterial culture can effectively sense formaldehyde in the air. However, when the bacterial culture is enclosed in a non-ventilated device, it cannot come into contact with the formaldehyde in the environment, reducing the effectiveness and accuracy of the detection. As a result, we added a fan for ventilation to the device.  The fan is programmed to operate periodically to draw air into the machine. If the air contains certain  formaldehyde, it will dissolve into bacterial culture and stimulate the GM E.coli to develop a pink colour and the change can be picked up by the ESP32CAM colour sensor.
+<p>Formaldehyde is highly soluble in water, therefore the GM E<i>. coli</i> in bacterial culture can effectively sense formaldehyde in the air. However, when the bacterial culture is enclosed in a non-ventilated device, it cannot come into contact with the formaldehyde in the environment, reducing the effectiveness and accuracy of the detection. As a result, we added a fan for ventilation to the device.  The fan is programmed to operate periodically to draw air into the machine. If the air contains certain  formaldehyde, it will dissolve into bacterial culture and stimulate the GM <i>E.coli</i> to develop a pink colour and the change can be picked up by the ESP32CAM colour sensor.
            
 The case of our machine is made of fibre boards.  We process these boards by laser-cutting.  There are mortise and tenon structures which ease the difficulty of assembling the machine.
 </p>
@@ -252,25 +252,23 @@ We decided not to use dry cells as the power supply since replacement is tedious
 <p>The total cost of making ADAM is about USD$20. Compare the inaccurate handheld formaldehyde detector in the market (USD$30), the professional instrument that can accurately detect formaldehyde (USD$350) and professional formaldehyde detection service (USD$90/room). , our products can be priced at USD$30-90.
 </p>
 <h1>The Prototype</h1>
-<center><img src="https://static.igem.wiki/teams/4813/wiki/hardware/hardware-fig1.jpeg">
+<center><img src="https://static.igem.wiki/teams/4813/wiki/hardware/hardware-fig1.jpeg" style="width:100vh;height:32vh;">
 <p><u>Figure 6. The prototype of ADAM and a diagram showing the design</u></p></center>
 <ul style=“list-style-type:circle”>
-  <li>The device is able to run routinely and automatically to check if the E.coli synthesis the red protein or not.  ESP32CAM is installed in the machine since it is integrated with light and camera for reading color.  It has Wi-Fi function which connects our device to the internet.
-  <li>Once the colour change of E.coli is recognised, it contacts the user immediately via the Internet. ESP32CAM sends a message to the user by using IFTTT, a platform that can link the device with SMS service.  The message alerts users that formaldehyde is detected.
+  <li>The device is able to run routinely and automatically to check if the <i>E.coli</i> synthesis the red protein or not.  ESP32CAM is installed in the machine since it is integrated with light and camera for reading color.  It has Wi-Fi function which connects our device to the internet.
+  <li>Once the colour change of <i>E.coli</i> is recognised, it contacts the user immediately via the Internet. ESP32CAM sends a message to the user by using IFTTT, a platform that can link the device with SMS service.  The message alerts users that formaldehyde is detected.
 
   <li>The size of the machine is also relatively small which means the production of it is also easier and more convenient, this allows mass production and usage. As for the design, the mortise and tenon structure is adopted so it creates a very convenient way to produce the device efficiently and generate a great stability and durability of the machine. Additionally, we adopt a combination of ESP32CAM, light and wifi. The integration of these computers greatly reduces the size of the device which increases its convenience.
 
-  <li>Our design also allows users to utilise the machine repeatedly, so the production costs are reduced. Actually, the production costs are not that high. As the machine can be used multiple times and the genetically modified E.coli can be cultivated continuously, expenses for replacing new E.coli and equipment are greatly reduced. As a consequence, costs of this device are absolutely affordable.
+  <li>Our design also allows users to utilise the machine repeatedly, so the production costs are reduced. Actually, the production costs are not that high. As the machine can be used multiple times and the genetically modified <i>E.coli</i> can be cultivated continuously, expenses for replacing new <i>E.coli</i> and equipment are greatly reduced. As a consequence, costs of this device are absolutely affordable.
 </ul>
 <h1>Limitations</h1>
 <ul style=“list-style-type:circle”>
-  <li>First of all, extreme temperatures may affect the functionality of the machine. As the genetically modified E.coli might not function properly at extreme high or low temperatures, which means they cannot synthesise red proteins and the detection would be restricted.
-
-  <li>Besides, only a portion of the public accept the use of our machine to detect formaldehyde. Some still adopt the traditional methods to do so. 
+  <li>Extreme temperatures may affect the functionality of the machine. As the genetically modified <i>E.coli</i> might not function properly at extreme high or low temperatures, which means they cannot synthesise red proteins and the detection would be restricted.
 
   <li>The correlation between colour change and actual formaldehyde level is still unclear so that requires more testing to confirm their relationship. 
 
-  <li>The E.coli requires a certain period of time to detect formaldehyde and produce red proteins.
+  <li>The <i>E.coli</i> requires a certain period of time to detect formaldehyde and produce red proteins.
 
   <li>The device is not able to operate with no Wi-Fi connection since it relies on Wi-Fi to send messages to clients via IFTTT.
 
@@ -283,9 +281,9 @@ We decided not to use dry cells as the power supply since replacement is tedious
 
   <li>Also, we may also need to explore more reporter genes to see if they give a stronger or more stable signal. 
 
-  <li>As temperature variation is a big factor of our design, we may focus on how to maintain a constant temperature during the process. Perhaps we can also investigate another way to let the genetically modified E.coli adapt to a wide range of temperatures and perform its functions effectively.
+  <li>As temperature variation is a big factor of our design, we may focus on how to maintain a constant temperature during the process. Perhaps we can also investigate another way to let the genetically modified <i>E.coli</i> adapt to a wide range of temperatures and perform its functions effectively.
 
-  <li>We may also need to adopt a more accurate sensor in order to detect the colour change of the E.coli. For instance, TCS3200 is more sensitive to colour changes and has a dimmer flashlight. Yet, it needs to be connected to Arduino Uno to function. Therefore, the size of them will be larger. In the future, we will provide another model with TCS3200 to suit different demands.
+  <li>We may also need to adopt a more accurate sensor in order to detect the colour change of the <i>E.coli</i>. For instance, TCS3200 is more sensitive to colour changes and has a dimmer flashlight. Yet, it needs to be connected to Arduino Uno to function. Therefore, the size of them will be larger. In the future, we will provide another model with TCS3200 to suit different demands.
 
 
 </ul>
