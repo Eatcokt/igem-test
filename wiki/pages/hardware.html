@@ -51,8 +51,8 @@ The case of our machine is made of fibre boards.  We process these boards by las
 <p>Regarding the electrical parts in our machine, we purchase and adopt ESP32CAM as a detector and processor.  This is because ESP32CAM is integrated with light which allows photo-taking in a dark environment. Meanwhile, ESP32CAM can provide Wi-Fi functionality when it connects with other equipment. We bought an extension board for ESP32CAM which enables a direct linkage between the ESP32CAMand the battery.  Also, the board allows us to control the operation of the fan by using ESP32CAM.
 
 We employ IFTTT as a medium connecting the machine and user. IFTTT is a web service and mobile app that help users automate web-based desks and boost productivity.  It connects different app and services together into Applets which is an automation allowing users to do things that their apps and devices cannot do on their own.  The name “IFTTT” stands for “If this, then that '' in programming language.  The company calls it because Applet would have 1 trigger and 1 action: if this happens, then that happens.   For instance, if I come home, then turn on the lights at the entrance. In our project, the case is: if ESP32CAM detects red colour on the petri dish, then sends a message to the user's phone.
-We adopt IFTTT because it is user-friendly and does not require coding skills.  Also, it allows us to customise the notifications that are sent to users. 
-
+We adopt IFTTT because it is user-friendly and does not require coding skills.  Also, it allows us to customise the notifications that are sent to users.</p> 
+<p>
 We write an Arduino program to instruct our device to:
 <ul style=“list-style-type:circle”>
   <li>Connect to WiFi network and IFTTT
@@ -62,6 +62,49 @@ We write an Arduino program to instruct our device to:
 
   <li>If it is pink/red, then the device will send IFTTT message
 </p>
+Details of the coding part are as follow:
+<u>1) Connect to WiFi network and ifttt</u>
+
+
+
+
+<u></u>
+<div class="box"></div>
+
+
+<div class="box">
+const char* ssid = "ABCD";
+const char* password = "00000000";
+WiFi.begin(ssid, password);
+
+</div>
+<u>2) Fan is turned on for 2mins, and closed after 28 mins</u>
+<div class="box">if (currentMillis - previousMillis >= fanOnDuration) {
+    digitalWrite(fanPin, LOW);
+    previousMillis = currentMillis;
+  } else if (currentMillis - previousMillis >= fanOffDuration) {
+    digitalWrite(fanPin, HIGH);
+    previousMillis = currentMillis;}
+</div>
+<u>3) LED light flash every 3 sec</u>
+<div class="box">if (currentMillis - previousMillis >= interval) {  previousMillis = currentMillis;
+    if (ledState) {
+      ledcWrite(0, 0); 
+      ledState = false;
+    } else { ledcWrite(0, 18); 
+      delay(ledOnDuration); 
+      ledcWrite(0, 0); 
+      ledState = false;} }
+</div>
+<u>4) ESP32CAM calculates the average rgb of the middle part of the flame</u>
+<div class="box">
+int pixelCount = (endPixel - startPixel) / 2; 
+int avgR = totalR / pixelCount;
+int avgG = totalG / pixelCount;
+int avgB = totalB / pixelCount;
+
+</div>
+
 
 
 <P></P>
