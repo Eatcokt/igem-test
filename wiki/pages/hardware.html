@@ -61,53 +61,246 @@ We write an Arduino program to instruct our device to:
   <li>ESP32CAM calculates the average rgb of the middle part of the flame
 
   <li>If it is pink/red, then the device will send IFTTT message
+</ul>
 </p>
-Details of the coding part are as follow:
-<u>1) Connect to WiFi network and ifttt</u>
+<p>Details of the coding part are as follow:</P>
+<img src="https://static.igem.wiki/teams/4813/wiki/hardware/hardware-code1.jpeg">
+<img src="https://static.igem.wiki/teams/4813/wiki/hardware/hardware-code2.jpeg">
+<h1>The Complete Arduino Code</h1>
 
 
+<pre>
 
 
-<u></u>
-<div class="box"></div>
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include "esp_camera.h"
 
-
-<div class="box">
 const char* ssid = "ABCD";
 const char* password = "00000000";
-WiFi.begin(ssid, password);
+const char* iftttWebhookURL = "https://maker.ifttt.com/trigger/IGEM/json/with/key/wSVPLTFjTMq05vxEz3tl_";
 
-</div>
-<u>2) Fan is turned on for 2mins, and closed after 28 mins</u>
-<div class="box">if (currentMillis - previousMillis >= fanOnDuration) {
+const int ledPin = 4;   // GPIO pin for your LED (previously 2)
+const int fanPin = 12;  // GPIO pin for fan control
+
+bool ledState = false;
+unsigned long previousMillis = 0;
+const long interval = 3000;       // 3 seconds
+const long fanOnDuration = 2 * 60 * 1000;  // 2 minutes in milliseconds
+const long fanOffDuration = 28 * 60 * 1000; // 28 minutes in milliseconds
+const long ledOnDuration = 250;   // 1/4 second in milliseconds
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+
+  static camera_config_t camera_config = {
+      .pin_pwdn = 32,
+      .pin_reset = -1,
+      .pin_xclk = 0,
+      .pin_sscb_sda = 26,
+      .pin_sscb_scl = 27,
+      .pin_d7 = 35,
+      .pin_d6 = 34,
+      .pin_d5 = 39,
+      .pin_d4 = 36,
+      .pin_d3 = 21,
+      .pin_d2 = 19,
+      .pin_d1 = 18,
+      .pin_d0 = 5,
+      .pin_vsync = 25,
+      .pin_href = 23,
+      .pin_pclk = 22,
+      .xclk_freq_hz = 20000000,
+      .ledc_timer = LEDC_TIMER_0,
+      .ledc_channel = LEDC_CHANNEL_0,
+      .pixel_format = PIXFORMAT_RGB565,
+      .frame_size = FRAMESIZE_VGA,
+      .fb_count = 1
+    };
+
+  if (esp_camera_init(&camera_config) != ESP_OK) {
+    Serial.println("Camera initialization failed");
+    return;
+  }
+
+  // Initialize the LED pin as an output
+  pinMode(ledPin, OUTPUT);
+  // Initialize the fan control pin as an output
+  pinMode(fanPin, OUTPUT);
+  // Start with the LED off
+  ledcAttachPin(ledPin, 0);
+  ledcSetup(0, 5000, 8); // 5000 Hz PWM frequency, 8-bit resolution
+  ledcWrite(0, 18); // Set the LED brightness to 7% of maximum intensity (30/255)
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+
+  // Fan control logic
+  if (currentMillis - previousMillis >= fanOnDuration) {
+    // Turn the fan off after 2 minutes
     digitalWrite(fanPin, LOW);
     previousMillis = currentMillis;
   } else if (currentMillis - previousMillis >= fanOffDuration) {
+    // Turn the fan on after 28 minutes
     digitalWrite(fanPin, HIGH);
-    previousMillis = currentMillis;}
-</div>
-<u>3) LED light flash every 3 sec</u>
-<div class="box">if (currentMillis - previousMillis >= interval) {  previousMillis = currentMillis;
+    previousMillis = currentMillis;
+  }
+
+  // LED flash once every 3 seconds
+  if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
+
     if (ledState) {
-      ledcWrite(0, 0); 
+      ledcWrite(0, 0); // LED off (brightness 0)
       ledState = false;
-    } else { ledcWrite(0, 18); 
-      delay(ledOnDuration); 
-      ledcWrite(0, 0); 
-      ledState = false;} }
-</div>
-<u>4) ESP32CAM calculates the average rgb of the middle part of the flame</u>
-<div class="box">
-int pixelCount = (endPixel - startPixel) / 2; 
-int avgR = totalR / pixelCount;
-int avgG = totalG / pixelCount;
-int avgB = totalB / pixelCount;
+    } else {
+      ledcWrite(0, 18); // Set the LED brightness to 7% of maximum intensity (30/255)
+      delay(ledOnDuration); // Wait for 1/4 second
+      ledcWrite(0, 0); // LED off (brightness 0)
+      ledState = false;
+    }
+  }
 
-</div>
+  camera_fb_t* fb = esp_camera_fb_get();
+  if (!fb) {
+    Serial.println("Camera capture failed");
+    return;
+  }
+
+  // Calculate the middle part of the frame (adjust these values as needed)
+  int startPixel = fb->len / 3;
+  int endPixel = 2 * fb->len / 3;
+
+  int totalR = 0;
+  int totalG = 0;
+  int totalB = 0;
+
+  for (int i = startPixel; i < endPixel; i += 2) {
+    uint16_t pixel = fb->buf[i] | (fb->buf[i + 1] << 8);
+    uint8_t r = (pixel >> 11) & 0x1F;
+    uint8_t g = (pixel >> 5) & 0x3F;
+    uint8_t b = pixel & 0x1F;
+
+    // Convert the RGB565 values to 0-255
+    r = r * 255 / 31;
+    g = g * 255 / 63;
+    b = b * 255 / 31;
+
+    totalR += r;
+    totalG += g;
+    totalB += b;
+  }
+
+  // Calculate the average RGB values for the middle part
+  int pixelCount = (endPixel - startPixel) / 2; // Number of pixels in the middle part
+  int avgR = totalR / pixelCount;
+  int avgG = totalG / pixelCount;
+  int avgB = totalB / pixelCount;
+
+  Serial.print("Average R: ");
+  Serial.print(avgR);
+  Serial.print(" G: ");
+  Serial.print(avgG);
+  Serial.print(" B: ");
+  Serial.println(avgB);
+
+  // Check if the colour is "red" based on thresholds (you can adjust these thresholds)
+  int redThreshold = 80; // Adjust as needed
+  int greenThreshold = 110; // Adjust as needed
+  int blueThreshold = 130; // Adjust as needed
+  bool isRed = (avgR > redThreshold) && (avgG < greenThreshold) && (avgB < blueThreshold);
+
+  if (isRed) {
+    Serial.println("Red Color Detected!");
+    // Send an IFTTT request here
+    if (WiFi.status() == WL_CONNECTED) {
+      HTTPClient http;
+      http.begin(iftttWebhookURL);
+      int httpResponseCode = http.POST("");
+      if (httpResponseCode > 0) {
+        Serial.println("IFTTT request sent successfully");
+      } else {
+        Serial.println("IFTTT request failed");
+      }
+      http.end();
+    }
+  }
+  esp_camera_fb_return(fb);
+  delay(100); // Adjust the delay time as needed for stability
+}
+
+
+</pre>
+<p>If you want to explore how to make a smart device with IFTTT, feel free to use the above coding as a reference.
+</p>
+<img src="https://static.igem.wiki/teams/4813/wiki/hardware/slide22.jpeg">
+<p><u>Figure 5. This is the power unit which is rechargeable</u></p>
+<p>
+We decided not to use dry cells as the power supply since replacement is tedious.  As they are thrown away, they will also pollute the environment by leaking chemicals which are highly toxic to organisms. Additionally, the rechargeable battery would provide better experiences for users, as they do not need to replace the batteries regularly. This brings users convenience. With the rechargeable batteries, less waste would be produced so that the environment can be protected also. Hence we utilise rechargeable Lithium batteries as our energy source as it is greener than other primary batteries.  It allows using a simpler structure in our machines as it is unnecessary for battery replacement.  We use a transformer to overcome the voltage and current difference between the battery and ESP32CAM, battery and charging board.  Moreover, we connect the battery with a charging board which allows the user to recharge the Lithium battery. Besides, the power control unit is separated from the Petri dish in order to avoid splashing which may damage the power supply. This ensures the durability of the machine.
+</p>
+<h1>The Cost of ADAM<h1>
+<p>The following table lists all the materials and accessories we used in the production of our prototype ADAM and their costs.
+</p>
+<img src="https://static.igem.wiki/teams/4813/wiki/hardware/hardware-table.jpeg">
+<p><u>table 1: production costs</u></p>
+<p>The total cost of making ADAM is about USD$20. Compare the inaccurate handheld formaldehyde detector in the market (USD$30), the professional instrument that can accurately detect formaldehyde (USD$350) and professional formaldehyde detection service (USD$90/room). , our products can be priced at USD$30-90.
+</p>
+<h1>The Prototype</h1>
+<img src="https://static.igem.wiki/teams/4813/wiki/hardware/hardware-fig1.jpeg">
+<p><u>Figure 6. The prototype of ADAM and a diagram showing the design</u></p>
+<ul style=“list-style-type:circle”>
+  <li>The device is able to run routinely and automatically to check if the E.coli synthesis the red protein or not.  ESP32CAM is installed in the machine since it is integrated with light and camera for reading color.  It has Wi-Fi function which connects our device to the internet.
+  <li>Once the colour change of E.coli is recognised, it contacts the user immediately via the Internet. ESP32CAM sends a message to the user by using IFTTT, a platform that can link the device with SMS service.  The message alerts users that formaldehyde is detected.
+
+  <li>The size of the machine is also relatively small which means the production of it is also easier and more convenient, this allows mass production and usage. As for the design, the mortise and tenon structure is adopted so it creates a very convenient way to produce the device efficiently and generate a great stability and durability of the machine. Additionally, we adopt a combination of ESP32CAM, light and wifi. The integration of these computers greatly reduces the size of the device which increases its convenience.
+
+  <li>Our design also allows users to utilise the machine repeatedly, so the production costs are reduced. Actually, the production costs are not that high. As the machine can be used multiple times and the genetically modified E.coli can be cultivated continuously, expenses for replacing new E.coli and equipment are greatly reduced. As a consequence, costs of this device are absolutely affordable.
+</ul>
+<h1>Limitations</h1>
+<ul style=“list-style-type:circle”>
+  <li>First of all, extreme temperatures may affect the functionality of the machine. As the genetically modified E.coli might not function properly at extreme high or low temperatures, which means they cannot synthesise red proteins and the detection would be restricted.
+
+  <li>Besides, only a portion of the public accept the use of our machine to detect formaldehyde. Some still adopt the traditional methods to do so. 
+
+  <li>The correlation between colour change and actual formaldehyde level is still unclear so that requires more testing to confirm their relationship. 
+
+  <li>The E.coli requires a certain period of time to detect formaldehyde and produce red proteins.
+
+  <li>The device is not able to operate with no Wi-Fi connection since it relies on Wi-Fi to send messages to clients via IFTTT.
+
+  <li>ESP32CAM is a less sensitive sensor thus it cannot detect minor colour change.
+</ul>
+<h1>Future directions</h1>
+<p>In order to have a deeper investigation and better improvement of the machine, we have figured out some ways to improve it:</p>
+<ul>
+  <li>It is likely we need to test more promoters, and adjust the strength of the promoter by modifying its DNA sequences. 
+
+  <li>Also, we may also need to explore more reporter genes to see if they give a stronger or more stable signal. 
+
+  <li>As temperature variation is a big factor of our design, we may focus on how to maintain a constant temperature during the process. Perhaps we can also investigate another way to let the genetically modified E.coli adapt to a wide range of temperatures and perform its functions effectively.
+
+  <li>We may also need to adopt a more accurate sensor in order to detect the colour change of the E.coli. For instance, TCS3200 is more sensitive to colour changes and has a dimmer flashlight. Yet, it needs to be connected to Arduino Uno to function. Therefore, the size of them will be larger. In the future, we will provide another model with TCS3200 to suit different demands.
+
+
+</ul>
+<p>reference</p>
+<ol>
+  <li>中国古代家具鉴定实例 ISBN： 9787801787224
+  <li>Combined Effects of UV Exposure Duration and Mechanical Abrasion on Microplastic Fragmentation by Polymer Type
+Young Kyoung Song, Sang Hee Hong, Mi Jang, Gi Myung Han, Seung Won Jung, and Won Joon Shim
+Environmental Science & Technology 2017 51 (8), 4368-4376
+DOI: 10.1021/acs.est.6b06155
+</ol>
 
 
 
-<P></P>
+
 <div class="row mt-4">
   <div class="col-lg-8">
     <h2>Overview</h2>
