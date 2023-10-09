@@ -9,7 +9,7 @@ body { padding-top: 56px; }
     position: relative; }
 
     /* SCROLL UP */
-    <style>
+
     #scrollToTopBtn {
         display: none;
         position: fixed;
@@ -29,7 +29,7 @@ body { padding-top: 56px; }
     #scrollToTopBtn:hover {
         background-color: #0056b3;
     }
-</style>
+
 
 /* CALLOUT */
 .bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
