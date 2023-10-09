@@ -11,8 +11,7 @@ body { padding-top: 56px; }
     background-color:#609060; 
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    width:100%;       
+    animation-fill-mode: forwards;       
         }
 
         
