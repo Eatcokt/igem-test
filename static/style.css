@@ -8,14 +8,13 @@ body { padding-top: 56px; }
     background-size: cover;
     background-position: center;
     position: relative;
-    background-color:#609060;        
+    background-color:#609060; 
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;       
         }
 
-         .bg-hero {
-            animation: fadeInAnimation ease 3s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-        }
+        
         @keyframes fadeInAnimation {
             0% {
                 opacity: 0;
