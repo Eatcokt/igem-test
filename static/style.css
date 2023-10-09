@@ -1,7 +1,8 @@
 body { padding-top: 56px; }
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #388e3c  !important; }
-/* .bg-hero { background-image: url(https://static.igem.wiki/teams/4813/wiki/73-light-green-gradient.jpg); */
+bg-hero { 
+    /* background-image: url(https://static.igem.wiki/teams/4813/wiki/73-light-green-gradient.jpg); */ 
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,7 +11,7 @@ body { padding-top: 56px; }
             background-color:#509950; 
             animation: fadeInAnimation ease 3s;
             animation-iteration-count: 1;
-            animation-fill-mode: forwards;
+            animation-fill-mode: forwards;}
              @keyframes fadeInAnimation {
             0% {
                 opacity: 0;
