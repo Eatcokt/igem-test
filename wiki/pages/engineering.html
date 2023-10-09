@@ -8,9 +8,9 @@
 
 
       <p>During the experimental phase of our project, we applied the principles of the engineering cycle to structure our project flow, experimental design, and problem-solving approach. This systematic framework greatly aided us in tackling challenges encountered during the cloning process. In the following section, we will describe how we effectively implemented our project by incorporating the key components of engineering design thinking.</p>
-      <p><h1>1. Design</h1>
+      <h1>1. Design</h1>
       <br>
-      <b>Inspirtation of the project</b></p>
+      <b><h3>Inspirtation of the project</b></h3>
 
       <p>In recent local news, there has been a growing concern about indoor air quality (IAQ) and the need to study the health effects of indoor air pollution. The Hong Kong Environmental Protection Department has identified various significant air pollutants present in homes, with formaldehyde being one of the most prevalent. Research studies have revealed that formaldehyde can originate from multiple sources, including the combustion of fuels in gas stoves, building and furnishing materials, renovation activities, new wooden furniture, and even the food we consume. This highlights the importance of investigating the impact of formaldehyde on indoor air quality and its potential health implications.</p>
       <P>After consulting with our science teachers, we have gained valuable insights and developed a preliminary idea and direction for designing our project. While we are incorporating synthetic biology concepts into our work, it is crucial to consider that our project's target audience is the general public. Therefore, our main focus should be on creating products that are user-friendly, accessible, and do not require any specialized equipment. We aim to develop solutions that can be easily understood and embraced by the public, emphasizing simplicity and practicality in our design approach. By considering the needs and preferences of the general population, we can ensure that our project resonates with a wider audience and has the potential for real-world impact.</p>
@@ -25,15 +25,29 @@
       <u>Fig. 2 The mechanism of formaldehyde activation of pFrmR promoter. Adopted from Team iGEM18_BGIC-Global Part Regirstry Page</u>
       <br>
       <a href="http://parts.igem.org/wiki/index.php/Part:BBa_K2728001">http://parts.igem.org/wiki/index.php/Part:BBa_K2728001</a>
-      <P><B>The designs of pFrmR constructs</p></b>
+      <B><h3>The designs of pFrmR constructs</h3></b>
       <p>The two graphic illustrations below shows the designs of pFrmR constructs that we planned to use for formaldehyde sensing.  </p>
       <img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/enginerring-1.jpeg" height="200">
       <br>
-      <b>The design of HxlR constructs</b>
+      <h3>The design of HxlR constructs</h3>
       <br>
       The other design is based on a HxlR protein which is a formaldehyde-responsive transcription factor from Bacillus subtilis located upstream of the hxlAB operon (Fig 1) (Zhu et al., 2021 & Yurimoto et al., 2005). In the presence of formaldehyde, wild-type HxlR protein binds to two specific DNA binding sites (BRH1&2) and activates the expression of the downstream hxlAB operon in Bacillus subtilis (Zhu et al., 2021 & Yurimoto et al., 2005). 
       <br>
-      <img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-3.jpeg">
+      <img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-3.jpeg" height="200">
+      <p>When formaldehyde is present, HxlR is triggered to bind to BRH1&2, activating the promoter of our dTomato reporter gene. This subsequently promotes the transcription and expression of our reporter gene in the host E.coli, allowing us to detect the presence of formaldehyde simply by observing if there is a red-colour change in our engineered E.coli cells</p>
+
+   <h3><b>K13A mutation in HxlR</b></h3>
+
+    <p>According to the research by Zhu (2021), when the 13th amino acid in HxlR protein, lysine, was replaced by alanine, the mutated K13A version of HxlR showed a more optimal conformation for DNA binding activity and a higher transcription activation than the wild-type HxlR protein.</p>
+
+    <p>Therefore, besides testing the wild-type HxlR, we also incorporate HxlR-K+13A into our construct design to examine whether HxlR-K13A can lead to an enhanced expression of the reporter genes to give E.coli cells a more obvious red-color change upon formaldehyde detection. If yes, HxlR-K13A can be used in our project as an improved design from the wild-type HxlR, by allowing a higher sensitivity in detecting formaldehyde.</p>
+
+    <h3><b>Constructs Designs</b></h3>
+    <br>
+    <p>There are a total of 4 constructs composing of HxlR to trigger expression of dTomato for formaldehyde detection in our host E.coli.</p>
+
+    <p>In our construct 1, we used the part BBa_K3332042 (which contains the HxlR gene, a strong constitutive reverse promoter named J23100 for HxlR, the two HxlR binding sites, and the wild-type promoter and RBS site for downstream genes) from a previous iGEM team, but we incorporate our desired reporter gene dTomato coding sequence after the wild-type promoter for expression. The expression of wild-type HxlR protein is naturally driven by a reverse promoter in Bacillus subtilis (Yurimoto et al., 2005). The HxlR protein in both of our constructs 1 (Fig 3) and 2 (Fig 4) is backwardly transcribed driven by a reverse promoter just like the wild-type HxlR gene. Both constructs 1 and 2 are being inserted into a commonly used plasmid pUC19 for cloning.</p>
+
 
 
 {% endblock %}
