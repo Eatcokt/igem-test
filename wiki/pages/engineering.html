@@ -22,7 +22,7 @@
       <p>Our objective was to compare the effectiveness of these two parts and determine which one would better serve our purpose. By examining their performance and characteristics, we aimed to identify the most suitable part for our household formaldehyde sensing device.</p>
       <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-2.jpeg" style="width:40%;height:40%;"></center>
       <br>
-      <u>Fig. 2 The mechanism of formaldehyde activation of pFrmR promoter. Adopted from Team iGEM18_BGIC-Global Part Regirstry Page</u>
+      <p><i><b>Fig. 2 The mechanism of formaldehyde activation of pFrmR promoter. Adopted from Team iGEM18_BGIC-Global Part Regirstry Page</b></i></p>
       <br>
       <a href="http://parts.igem.org/wiki/index.php/Part:BBa_K2728001">http://parts.igem.org/wiki/index.php/Part:BBa_K2728001</a>
       <h3><b>The designs of pFrmR constructs</h3></b>
@@ -34,17 +34,17 @@
       The other design is based on a HxlR protein which is a formaldehyde-responsive transcription factor from Bacillus subtilis located upstream of the hxlAB operon (Fig 1) (Zhu et al., 2021 & Yurimoto et al., 2005). In the presence of formaldehyde, wild-type HxlR protein binds to two specific DNA binding sites (BRH1&2) and activates the expression of the downstream hxlAB operon in Bacillus subtilis (Zhu et al., 2021 & Yurimoto et al., 2005). 
       <br>
       <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-3.jpeg" style="width:70%;height:70%;"></center>
-      <p>When formaldehyde is present, HxlR is triggered to bind to BRH1&2, activating the promoter of our dTomato reporter gene. This subsequently promotes the transcription and expression of our reporter gene in the host E.coli, allowing us to detect the presence of formaldehyde simply by observing if there is a red-colour change in our engineered E.coli cells</p>
+      <p>When formaldehyde is present, HxlR is triggered to bind to BRH1&2, activating the promoter of our dTomato reporter gene. This subsequently promotes the transcription and expression of our reporter gene in the host <i>E.coli</i>, allowing us to detect the presence of formaldehyde simply by observing if there is a red-colour change in our engineered <i>E.coli</i> cells</p>
 
    <h3><b>K13A mutation in HxlR</h3></b>
 
     <p>According to the research by Zhu (2021), when the 13th amino acid in HxlR protein, lysine, was replaced by alanine, the mutated K13A version of HxlR showed a more optimal conformation for DNA binding activity and a higher transcription activation than the wild-type HxlR protein.</p>
 
-    <p>Therefore, besides testing the wild-type HxlR, we also incorporate HxlR-K+13A into our construct design to examine whether HxlR-K13A can lead to an enhanced expression of the reporter genes to give E.coli cells a more obvious red-color change upon formaldehyde detection. If yes, HxlR-K13A can be used in our project as an improved design from the wild-type HxlR, by allowing a higher sensitivity in detecting formaldehyde.</p>
+    <p>Therefore, besides testing the wild-type HxlR, we also incorporate HxlR-K+13A into our construct design to examine whether HxlR-K13A can lead to an enhanced expression of the reporter genes to give <i>E.coli</i> cells a more obvious red-color change upon formaldehyde detection. If yes, HxlR-K13A can be used in our project as an improved design from the wild-type HxlR, by allowing a higher sensitivity in detecting formaldehyde.</p>
 
     <h3><b>Constructs Designs</h3></b>
     <br>
-    <p>There are a total of 4 constructs composing of HxlR to trigger expression of dTomato for formaldehyde detection in our host E.coli.</p>
+    <p>There are a total of 4 constructs composing of HxlR to trigger expression of dTomato for formaldehyde detection in our host <i>E.coli</i>.</p>
 
     <p>In our construct 1, we used the part BBa_K3332042 (which contains the HxlR gene, a strong constitutive reverse promoter named J23100 for HxlR, the two HxlR binding sites, and the wild-type promoter and RBS site for downstream genes) from a previous iGEM team, but we incorporate our desired reporter gene dTomato coding sequence after the wild-type promoter for expression. The expression of wild-type HxlR protein is naturally driven by a reverse promoter in Bacillus subtilis (Yurimoto et al., 2005). The HxlR protein in both of our constructs 1 (Fig 3) and 2 (Fig 4) is backwardly transcribed driven by a reverse promoter just like the wild-type HxlR gene. Both constructs 1 and 2 are being inserted into a commonly used plasmid pUC19 for cloning.</p>
     
@@ -65,8 +65,8 @@
     <p>After conducting a literature review, we found that red chromoproteins were particularly vivid and easy to express. Given our team's prior experience with the red chromoprotein mCherry, we decided to explore the use of dTomato as it was reported to be an even more intense red chromoprotein compared to mCherry. Further research revealed that tdTomato is an enhanced version of dTomato, although this claim specifically referred to its fluorescence properties rather than its chromoprotein color (Shaner, 2004).</p>
     <p>To determine whether tdTomato also exhibited a more intense color than dTomato when expressed in bacterial colonies, we planned to compare the two red proteins as part of our project's objectives. To facilitate this comparison, we obtained the codon-optimized coding sequences of dTomato and tdTomato from NCBI. We then incorporated these sequences, along with a commonly used strong constitutive promoter (BBa_J23100), into two constructs. These constructs were ordered as gBlocks from IDT. Additionally, we also ordered constructs that contained the pFrmR promoter and HxlR operon driving the expression of dTomato and tdTomato, respectively, from IDT. These constructs would enable us to examine the performance of dTomato and tdTomato under the control of different promoters.</p>
     <h3><b>Choice of biological system</h3></b>
-    <p>We decided to use E. coli as our main organism for this project because it is easily accessible in our laboratory and we are familiar with working with it. An additional advantage is that the pFrmR promoter, which we are using, naturally functions in E. coli since it was discovered in this bacterium. This simplifies our experimental setup as we don't need to introduce an additional protein.</p>
-    <p>Now that we have chosen E. coli as our host organism, we can move on to the building phase of our project.</p>
+    <p>We decided to use <i>E. coli</i> as our main organism for this project because it is easily accessible in our laboratory and we are familiar with working with it. An additional advantage is that the pFrmR promoter, which we are using, naturally functions in <i>E. coli</i> since it was discovered in this bacterium. This simplifies our experimental setup as we don't need to introduce an additional protein.</p>
+    <p>Now that we have chosen <i>E. coli</i> as our host organism, we can move on to the building phase of our project.</p>
     <b><h1>2. Build</b></h1>
     <h3><b>Cloning of constructs</h3></b>
     <p>We chose to use the HiFi-assembly method from NEB (New England Biolabs) for our cloning. This method allows us to create the constructs without leaving any scars. Thanks to NEB's sponsorship, we received a free HiFi assembly kit, making the process easier for us. We designed 20-base pair overlapping regions (BBa_K4813007, BBa_K4813008) in our constructs, which successfully assembled into the EcoRI restriction site of the pUC19 vector. This confirmed the effectiveness of the HiFi-assembly method for our cloning purposes.</p>
@@ -78,11 +78,11 @@
    </p>
    <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-8.jpeg" style="width:60%;height:60%;"></center>
    <br>
-   <u>Fig. 7 The result plates of first cloning attempt. The no assembly mix control shows colonies which may due to incomplete digestion of pUC19. </u>
+   <p><i><b>Fig. 7 The result plates of first cloning attempt. The no assembly mix control shows colonies which may due to incomplete digestion of pUC19. </b></i></p>
    <p>The gel electrophoresis results revealed two bands, indicating the presence of an insert in the digested plasmids. Thus, we conducted the first round of functional assay with formaldehyde, but none of the colonies demonstrated a color change. Further testing and team discussions revealed an important observation: even the negative control plate (with digested pUC19) showed a few colonies. This suggested that the digestion may not have been completed properly, and the colonies appearing on the pFrmR constructs (BBa_K4813002, BBa_K4813004) plates might be false positives.</p>
    <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-9.jpeg" style="width:60%;height:60%;"></center>
    <br>
-   <u>Fig. 8 The gel photo of the first cloning attempt after double enzyme digestion check. The ladder used was 1kb+ ladder from NEB. The other colonies showed two bands.</u>
+   <p><i><b>Fig. 8 The gel photo of the first cloning attempt after double enzyme digestion check. The ladder used was 1kb+ ladder from NEB. The other colonies showed two bands. </b></i></p>
    <p>To address this issue, we decided to repeat the cloning process and adopt a faster and higher-throughput screening method called colony PCR. For this purpose, we ordered M13 primers from the TechDragon company. This change in strategy would allow us to more efficiently identify positive clones and expedite our progress.</p>
    <p>Based on our observations from this cloning attempt, we have noticed that dTomato exhibits a higher level of coloration compared to tdTomato, (will be further discussed in the test section). Due to the limited time remaining until the deadline, we have decided to focus solely on cloning constructs using dTomato.</p>
    <p>This decision was made to optimize our time and resources, allowing us to concentrate our efforts on a single construct that has demonstrated more desirable coloration properties. By narrowing our focus, we aim to streamline our work and increase the chances of meeting our project objectives within the given timeframe.</p>
@@ -92,7 +92,7 @@
     </p>
     <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-10.jpeg" style="width:60%;height:60%;"></center>
     <br>
-    <u>Fig. 9 We used agar plates to inoculate and label each individual colony of our transformants. This allowed us to keep track of the different colonies and ensure that we could evaluate them individually</u>
+    <p><i><b>Fig. 9 We used agar plates to inoculate and label each individual colony of our transformants. This allowed us to keep track of the different colonies and ensure that we could evaluate them individually</b></i></p>
     <h3><b>Final attempt:</h3></b>
     <p>To address the challenges we faced in our previous cloning attempts, we made some important changes. Firstly, we increased the digestion time of the pUC19 vector to 4 hours to ensure complete digestion. We also performed gel purification to obtain purified DNA fragments before proceeding with the assembly. These adjustments improved the quality of our DNA samples by ensuring only digested vector is extracted and removing impurities.</p>
     <p>Additionally, we increased the molar ratio of insert to vector to around 5:1. This means we had more insert DNA compared to the vector, which increased the chances of successful cloning.</p>
@@ -100,20 +100,20 @@
     <p>After confirmed by colony PCR, we are excited that we have finally successfully cloned both the pFrmR constructs (BBa_K4813002) and the HxlR constructs (BBa_K481300? ) this time. This progress marks a significant advancement in our research project, bringing us closer to achieving our goals just before the deadline. It's an exciting moment as we can now move forward to the next phase, which involves conducting functional assays. </p>
     <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-11.jpeg" style="width:60%;height:60%;"></center>
     <br>
-    <u>Fig. 10. This gel photo displays the results of the colony PCR. Lane 1 represents the 1kb+ DNA ladder from NEB. Lanes 2 to 7 exhibit the colony PCR results for both the pFrmR constructs and HxlR constructs, showing distinct bands of the expected sizes. Lane 8 corresponds to the pUC19 empty vector without any insert. The colony PCR was performed using M13 primers.</u>
+    <p><i><b>Fig. 10. This gel photo displays the results of the colony PCR. Lane 1 represents the 1kb+ DNA ladder from NEB. Lanes 2 to 7 exhibit the colony PCR results for both the pFrmR constructs and HxlR constructs, showing distinct bands of the expected sizes. Lane 8 corresponds to the pUC19 empty vector without any insert. The colony PCR was performed using M13 primers.</b></i></p>
     <h2><b>Cloning of the HxlR constructs</b></h2>
     <h3><b>1st attempt:</h3></b>
-    <p>We have tried to clone all of our 4 constructs carrying the HxlR gene into plasmids using NEBuilder HiFi DNA Assembly. We designed 20 base pair 5’ or 3’ overlap sequences in constructs 1 and 2 to insert them into EcoRI-digested pUC19 plasmids and 20 base pair 5’ or 3’ overlap sequences in constructs 3 and 4 to insert them into XbaI- and EcoRI-digested pET28A(+)-FGF2 plasmids. After assembling the constructs into corresponding plasmids, we transformed the recombinant plasmids into host cells, DH5 alpha and BL21 star E.coli. However, there were no colonies grown after overnight incubation. </p>
+    <p>We have tried to clone all of our 4 constructs carrying the HxlR gene into plasmids using NEBuilder HiFi DNA Assembly. We designed 20 base pair 5’ or 3’ overlap sequences in constructs 1 and 2 to insert them into EcoRI-digested pUC19 plasmids and 20 base pair 5’ or 3’ overlap sequences in constructs 3 and 4 to insert them into XbaI- and EcoRI-digested pET28A(+)-FGF2 plasmids. After assembling the constructs into corresponding plasmids, we transformed the recombinant plasmids into host cells, DH5 alpha and BL21 star <i>E.coli</i>. However, there were no colonies grown after overnight incubation. </p>
     <h3><b>2nd attempt:</h3></b>
     <p>We</p>
     <b><h1>3. Test</b></h1>
     <b><h3>Comparison of Color Intensity: dTomato (BBa_K4813005) vs. tdTomato (BBa_K4813006) in Colonies</h3></b>
     <p>In our experiments with the J23100-dTomato (BBa_K4813005) and J23100-tdTomato (BBa_K4813006) constructs, we made an interesting observation. The colonies formed from these constructs displayed varying intensities of red color. In Figure 11, it is evident that the plates containing colonies expressing dTomato exhibited a significantly deeper pink to red color compared to the plates with colonies expressing tdTomato.</p>
-    <p>We have formulated a hypothesis to explain the differences we observed in the expression levels and color intensity of the dTomato and tdTomato proteins. Our hypothesis suggests that the larger size of tdTomato compared to dTomato makes it more challenging for the E. coli to express it effectively. This difficulty in expression may hinder the growth of E. coli and ultimately result in a lower production of red color proteins. Supporting this idea, we also noticed that the colonies expressing tdTomato appeared smaller in size compared to those expressing dTomato under the same growth time and growth condition. </p>
+    <p>We have formulated a hypothesis to explain the differences we observed in the expression levels and color intensity of the dTomato and tdTomato proteins. Our hypothesis suggests that the larger size of tdTomato compared to dTomato makes it more challenging for the <i>E. coli</i> to express it effectively. This difficulty in expression may hinder the growth of <i>E. coli</i> and ultimately result in a lower production of red color proteins. Supporting this idea, we also noticed that the colonies expressing tdTomato appeared smaller in size compared to those expressing dTomato under the same growth time and growth condition. </p>
     <p>However, it is important to remember that our hypothesis requires further investigation.</p>
     <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-12.jpeg" style="width:60%;height:60%;"></center>
     <br>
-    <u>Fig. 11 The colonies expressing dTomato (BBa_K4813005) has a significant deeper RFP colour intensity than the colonies expressing tdTomato (BBa_K4813006)</u>
+    <p><i><b>Fig. 11 The colonies expressing dTomato (BBa_K4813005) has a significant deeper RFP colour intensity than the colonies expressing tdTomato (BBa_K4813006)</b></i></p>
       <p>Based on our findings, we have decided to continue testing the formaldehyde sensing constructs using dTomato. This choice is due to our initial goal of creating a device with a signal that can be easily seen with the naked eye. We observed that dTomato displayed a stronger and more obvious coloration compared to tdTomato, making it a preferable option for our project.</p>
 
     <p>Moreover, we learned that the fluorescence signal of a protein does not necessarily directly relate to its color or chromoprotein properties. This realization highlights the complexity of protein behavior and reminds us to consider various factors when selecting fluorescent or chromoprotein markers for specific applications.</p>
@@ -124,11 +124,11 @@
 
     <p>During our testing, we encountered a problem known as leaky expression in both the pFrmR and HxlR constructs. We noticed that a few colonies on the plate showed a pink color even in the absence of formaldehyde. While this confirmed the presence of our gene of interest, it raised concerns about potential false positive results in our formaldehyde testing. To address this issue, we carefully selected a colony with a white color and performed colony PCR to verify its composition for further analysis.</p>
 
-    <p>For our formaldehyde testing, we added formaldehyde to LB broth along with our engineered E. coli cells. We then cultured them for 12 hours in the presence of ampicillin. After the incubation period, we used centrifugation to collect cell pellets, making it easier to observe any color changes in the cells.</p>
+    <p>For our formaldehyde testing, we added formaldehyde to LB broth along with our engineered <i>E. coli</i> cells. We then cultured them for 12 hours in the presence of ampicillin. After the incubation period, we used centrifugation to collect cell pellets, making it easier to observe any color changes in the cells.</p>
     <center><img src="https://static.igem.wiki/teams/4813/wiki/engineering-success/engineering-13.jpeg" style="width:60%;height:60%;"></center>
     <br>
-    <u>Fig. 12 This shows two sets of pelleted E. coli cells expressing the pFrmR-dTomato constructs (BBa_K4813002). On the right side, we can observe that the cells treated with formaldehyde, with a concentration of 500 uM, have turned red in color. In contrast, on the left side, the cells without formaldehyde treatment have remained white in color.</u>
-    <p>The figures above show that our engineered pFrmR-dTomato E. coli cells responded as expected to formaldehyde, but the cells expressing the HxIRK13A-dTomato constructs did not. We need to figure out why this happened by examining our experiment and considering possible factors that influenced the results.</p>
+    <p><i><b>Fig. 12 This shows two sets of pelleted <i>E. coli</i> cells expressing the pFrmR-dTomato constructs (BBa_K4813002). On the right side, we can observe that the cells treated with formaldehyde, with a concentration of 500 uM, have turned red in color. In contrast, on the left side, the cells without formaldehyde treatment have remained white in color.</b></i></p>
+    <p>The figures above show that our engineered pFrmR-dTomato <i>E. coli</i> cells responded as expected to formaldehyde, but the cells expressing the HxIRK13A-dTomato constructs did not. We need to figure out why this happened by examining our experiment and considering possible factors that influenced the results.</p>
     <p>Now, let's move on to the learning phase of our project. We will discuss and interpret our results to plan for the next steps.</p>
     <b><h1>4. Learn</h1></b>
     <p>Through the experimental engineering cycles, we have gained valuable insights. We learned that using an effective and systematic problem-solving approach helped us successfully clone our constructs and genes.</p>
