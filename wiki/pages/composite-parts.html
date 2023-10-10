@@ -9,6 +9,12 @@
   <hr>
 </div>
 
+<div class="row mt-4">
+  <b><h1>Composite Parts</h1></b>
+
+  <hr>
+</div>
+
 <div class="page_content">
   <pre>
   Part type:
@@ -38,7 +44,8 @@ of a red-colored dTomato chromoprotein when formaldehyde is present. In our proj
 detecting the presence of formaldehyde by inducing a color change in the host E. coli.
 
 Reference:
-Yurimoto, Hiroya, et al. “HXLR, a member of the duf24 protein family, is a DNA-binding protein that acts as a positive regulator of the formaldehyde-induciblehxlaboperon inbacillus subtilis.” Molecular Microbiology, vol. 57, no. 2, 2005, pp. 511–519, https://doi.org/10.1111/j.1365-2958.2005.04702.x. 
+Yurimoto, Hiroya, et al. “HXLR, a member of the duf24 protein family, is a DNA-binding protein that acts as a positive regulator of the formaldehyde-induciblehxlaboperon inbacillus subtilis.” 
+Molecular Microbiology, vol. 57, no. 2, 2005, pp. 511–519, https://doi.org/10.1111/j.1365-2958.2005.04702.x. 
 Sequence:
 (5’ overlap- HxlR-JS23100-BRH1&2-pFormaldehyde-RBS- optimized dTOMATO-Ter -3’ Overlap)
 atccccgggtaccgagctcg<b>tctaga</b>TTAcaacgattctttcatgacatttttgtcgatatcaatcaattccatatagcctttccccca
@@ -78,17 +85,179 @@ Reverse HxlR-K13A-dTomato formaldehyde sensing chromoprotein reporter
 Long Description:
 This composite component comprises several elements, including a HxlR protein with a K13A mutation (BBa_K4813009), 
 a constitutive strong promoter (J23100), wild-type BRH1&2 binding sites for HxlR protein (BBa_K4813016), 
-a wild-type promoter for Bacillus subtilis hxlAB operon (BBa_K4813017), a wild-type Bacillus subtilis RBS site (BBa_K4813021), an E. coli codon-optimized chromoprotein and red fluorescent protein dTomato coding sequence (BBa_K4813000), and a strong double terminator (B0015). Additionally, the 5' and 3' ends of the composite part feature a 20 base pair overlap sequence designed for the pUC19 EcoRI restriction site for NEBuilder HiFi assembly (BBa_K4813007 & BBa_K4813008).
+a wild-type promoter for Bacillus subtilis hxlAB operon (BBa_K4813017), a wild-type Bacillus subtilis RBS site (BBa_K4813021), 
+an E. coli codon-optimized chromoprotein and red fluorescent protein dTomato coding sequence (BBa_K4813000), 
+and a strong double terminator (B0015). Additionally, the 5' and 3' ends of the composite part 
+feature a 20 base pair overlap sequence designed for the pUC19 EcoRI restriction site for NEBuilder HiFi assembly (BBa_K4813007 & BBa_K4813008).
 
-The HxlR protein is a formaldehyde-responsive transcription factor from Bacillus subtilis [1,2]. In the presence of formaldehyde, wild-type HxlR protein binds to two specific binding sites (BRH1&2) and activates the expression of the downstream hxlAB operon in Bacillus subtilis [2]. According to literature, when the 13th amino acid in HxlR protein, Lysine, was replaced by Alanine, mutated HxlR-K13A protein showed a more optimal conformation for DNA binding and transcription activation than the wild-type HxlR protein [1]. 
+The HxlR protein is a formaldehyde-responsive transcription factor from Bacillus subtilis [1,2]. 
+In the presence of formaldehyde, wild-type HxlR protein binds to two specific binding sites (BRH1&2) and activates 
+the expression of the downstream hxlAB operon in Bacillus subtilis [2]. According to literature, 
+when the 13th amino acid in HxlR protein, Lysine, was replaced by Alanine, 
+mutated HxlR-K13A protein showed a more optimal conformation for DNA binding and transcription activation than the wild-type HxlR protein [1]. 
 
-In this composite component, we incorporated the mutated K13A version of HxlR gene to examine if HxlR-K13A can lead to an enhanced expression of a red-colored dTomato chromoprotein when formaldehyde is present, comparing to our another composite component expressing wild-type HxlR (BBa_K4813014). In our project, this composite component serves the purpose of detecting the presence of formaldehyde by inducing a color change in the host E. coli.
+In this composite component, we incorporated the mutated K13A version of HxlR gene to examine if HxlR-K13A can lead 
+to an enhanced expression of a red-colored dTomato chromoprotein when formaldehyde is present, 
+comparing to our another composite component expressing wild-type HxlR (BBa_K4813014). 
+In our project, this composite component serves the purpose of detecting the presence of formaldehyde by inducing a color change in the host E. coli.
 
 Reference:
-Zhu, Rongfeng, et al. “Genetically encoded formaldehyde sensors inspired by a protein intra-helical crosslinking reaction.” Nature Communications, vol. 12, no. 1, 2021, https://doi.org/10.1038/s41467-020-20754-4. 
-Yurimoto, Hiroya, et al. “HXLR, a member of the duf24 protein family, is a DNA-binding protein that acts as a positive regulator of the formaldehyde-induciblehxlaboperon inbacillus subtilis.” Molecular Microbiology, vol. 57, no. 2, 2005, pp. 511–519, https://doi.org/10.1111/j.1365-2958.2005.04702.x. 
+Zhu, Rongfeng, et al. “Genetically encoded formaldehyde sensors inspired by a protein intra-helical crosslinking reaction.” 
+Nature Communications, vol. 12, no. 1, 2021, https://doi.org/10.1038/s41467-020-20754-4. 
+Yurimoto, Hiroya, et al. “HXLR, a member of the duf24 protein family, is a DNA-binding protein that acts as a positive regulator of the formaldehyde-induciblehxlaboperon inbacillus subtilis.” 
+Molecular Microbiology, vol. 57, no. 2, 2005, pp. 511–519, https://doi.org/10.1111/j.1365-2958.2005.04702.x. 
+
+<b>
+Sequence:
+(5’ overlap- HxlR K13A-JS23100-BRH1&2-pFormaldehyde-RBS- optimized dTOMATO-Ter -3’ Overlap)
+</b>
+
+atccccgggtaccgagctcg<b>tctaga</b>TTAcaacgattctttcatgacatttttgtcgatatcaatcaattccatatagcctttccccca
+ctcatacatggcttcaagaataggcatgaggctttctccgtgcggggtcagagaatattcaaccttcggcgggacaactggatac
+acttccctgtgaacaatcatatcctgctcaagctctctcagctgattcacgaggatcttctgcgtaatatcaggaatcaatgtttttaatt
+cattgaaccgttttgtgccttcttttcctaaatgccataaaatgagcattttccatttaccgccaatcactgcaagcgttaattc<b>TGC</b>ct
+cacaattaaaccttttgtcgtc<B>CAT</B>ccggctcaatagaatcccccccttagtaacctttttgtatgttagatacgtatcatcacttactta
+cgctagcactgtacctaggactgagctagccgtcaaagaaatctgattgtctctcctcacagtatcctccaagtaacttgttgacttc
+aaagtgcctacttctcaacaaaagaaggaacctatagaatgaacaataattcgaaaaagggagtggatcaaca<b>ATG</b>gtgag
+caaaggtgaagaggtgatcaaagaatttatgcgctttaaagtgcgtatggaaggtagcatgaatggccatgaatttgaaattgaa
+ggtgaaggcgaaggtcgtccgtatgaaggcacccagaccgcaaaactgaaagttaccaaaggtggtccgctgccgtttgcatg
+ggatattctgagtccgcagtttatgtatggtagcaaagcctatgttaaacatccggcagatattccggattacaaaaagctgagcttt
+ccggaaggttttaaatgggaacgtgtgatgaattttgaagatggtggtctggttaccgttacacaggatagcagcctgcaggatgg
+caccctgatctataaagttaaaatgcgtggcaccaattttccgcctgatggtccggttatgcagaaaaagaccatgggttgggaag
+caagcaccgaacgtctgtatccgcgtgatggtgttctgaaaggtgaaatccatcaggcactgaaactgaaggatggtggccatta
+tctggttgagtttaaaaccatttacatggccaaaaagccggttcagctgcctggttattactatgttgataccaaactggatatcacca
+gccacaatgaagattataccatcgtggaacagtatgaacgtagcgaaggccgtcatcacctgtttctgtatggcatggatgaactg
+tacaag<b>TAATAA</b>atacgcccaggcatcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtc
+ggtgaacgctctctactagagtcacactggctcaccttcgggtgggcctttctgcgtttata<b>gaattcc</b>actggccgtcgttttacaa
+
+  </pre>
+
+<pre>
+
+  Part type:
+Composite - Device
+
+Selected part name/ID:
+BBa_K4813022
+
+Link:
+http://parts.igem.org/Part:BBa_K4813022
 
 
+Short description/ Name:
+Forward HxlR-dTomato formaldehyde sensing chromoprotein reporter
+
+Long Description:
+
+This composite component comprises several elements, including a modified RBS site in pET28a(+)-FGF2 plasmid (BBa_K4813019), 
+a wild-type HxlR protein (BBa_K4813018), wild-type BRH1&2 binding sites for HxlR protein (BBa_K4813016), 
+a wild-type promoter for Bacillus subtilis hxlAB operon (BBa_K4813017), a wild-type Bacillus subtilis RBS site (BBa_K4813021), 
+an E. coli codon-optimized chromoprotein and red fluorescent protein dTomato coding sequence (BBa_K4813000), 
+and a strong double terminator (B0015). Additionally, the 5' and 3' ends of the composite part feature a 20 base-pair overlap 
+sequence designed for the pET28a(+)-FGF2 EcoRI and XbaI restriction sites for NEBuilder HiFi assembly (BBa_K4813010 & BBa_K4813011).
+
+The HxlR protein is a formaldehyde-responsive transcription factor from Bacillus subtilis [1]. In the presence of formaldehyde, 
+wild-type HxlR protein binds to two specific binding sites (BRH1&2) and activates the expression of the downstream hxlAB operon in Bacillus subtilis [1]. 
+The expression of wild-type HxlR protein is naturally driven by a reverse promoter and we hardly found any previous research 
+that has explored the possibility of having HxlR forwardly transcribed. In this composite component, 
+to find out if a forwardly transcribed HxlR protein can still be expressed and retain its function, 
+we specially designed to have HxlR protein driven by a forward T7 promoter. In our project, 
+we utilise HxlR to promote the expression of a red-colored dTomato chromoprotein when formaldehyde is present. 
+This composite component serves the purpose of detecting the presence of formaldehyde by inducing a color change in the host E. coli.
+
+Reference:
+Zhu, Rongfeng, et al. “Genetically encoded formaldehyde sensors inspired by a protein intra-helical crosslinking reaction.” 
+Nature Communications, vol. 12, no. 1, 2021, https://doi.org/10.1038/s41467-020-20754-4. 
+
+<b>
+  Sequence:
+(5’ overlap-T7 RBS- HxlR-BRH1&2-pFormaldehyde-RBS- optimized dTOMATO-Ter -3’ Overlap)
+
+</b>
+
+gagcggataacaattcccct<b>tctaga</b>tttgtttaactttaagaaggagagcagct<b>ATG</b>cagcttagcttgagccggatggacga
+caaaaggtttaattgtgagaaggaattaacgcttgcagtgattggcggtaaatggaaaatgctcattttatggcatttaggaaaaga
+aggcacaaaacggttcaatgaattaaaaacattgattcctgatattacgcagaagatcctcgtgaatcagctgagagagcttgag
+caggatatgattgttcacagggaagtgtatccagttgtcccgccgaaggttgaatattctctgaccccgcacggagaaagcctcat
+aggatatgattgttcacagggaagtgtatccagttgtcccgccgaaggttgaatattctctgaccccgcacggagaaagcctcat<b>T</b>
+<b>AA</b>agaaatctgattgtctctcctcacagtatcctccaagtaacttgttgacttcaaagtgcctacttctcaacaaaagaaggaacct
+atagaatgaacaataattcgaaaaagggagtggatcaaca<b>ATG</b>gtgagcaaaggtgaagaggtgatcaaagaatttatgcg
+cagaccgcaaaactgaaagttaccaaaggtggtccgctgccgtttgcatgggatattctgagtccgcagtttatgtatggtagcaa
+ctttaaagtgcgtatggaaggtagcatgaatggccatgaatttgaaattgaaggtgaaggcgaaggtcgtccgtatgaaggcacc
+agcctatgttaaacatccggcagatattccggattacaaaaagctgagctttccggaaggttttaaatgggaacgtgtgatgaatttt
+gaagatggtggtctggttaccgttacacaggatagcagcctgcaggatggcaccctgatctataaagttaaaatgcgtggcacca
+attttccgcctgatggtccggttatgcagaaaaagaccatgggttgggaagcaagcaccgaacgtctgtatccgcgtgatggtgtt
+agccggttcagctgcctggttattactatgttgataccaaactggatatcaccagccacaatgaagattataccatcgtggaacagt
+atgaacgtagcgaaggccgtcatcacctgtttctgtatggcatggatgaactgtacaag<b>TAATAA</b>atacgcccaggcatcaaa
+taaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactggctca
+ccttcgggtgggcctttctgcgtttata<b>gaattc</b>cgagctccgtcgacaagctt
+
+</pre>
+
+<pre>
+
+
+</pre>
+Part type:
+Composite - Device
+
+Selected part name/ID:
+BBa_K4813024
+
+Link:
+http://parts.igem.org/Part:BBa_K4813020
+
+Short description/ Name:
+Forward HxlR-K13A-dTomato formaldehyde sensing chromoprotein reporter
+
+Long Description:
+This composite component comprises several elements, including a modified RBS site in pET28a(+)-FGF2 plasmid (BBa_K4813019), 
+a HxlR protein with a K13A mutation (BBa_K4813020), wild-type BRH1&2 binding sites for HxlR protein (BBa_K4813016), 
+a wild-type promoter for Bacillus subtilis hxlAB operon (BBa_K4813017), a wild-type Bacillus subtilis RBS site (BBa_K4813021),
+an E. coli codon-optimized chromoprotein and red fluorescent protein dTomato coding sequence (BBa_K4813000), and a strong double terminator (BBa_B0015). 
+Additionally, the 5' and 3' ends of the composite part feature a 20 base-pair overlap sequence designed for the 
+pET28a(+)-FGF2 EcoRI and XbaI restriction sites for NEBuilder HiFi assembly (BBa_K4813010 & BBa_K4813011).
+
+The HxlR protein is a formaldehyde-responsive transcription factor from Bacillus subtilis [1]. In the presence of formaldehyde, 
+wild-type HxlR protein binds to two specific binding sites (BRH1&2) and activates the expression of the downstream hxlAB operon in 
+Bacillus subtilis [1]. According to literature, when the 13th amino acid in HxlR protein, Lysine, was replaced by Alanine, 
+mutated HxlR-K13A protein showed a more optimal conformation for DNA binding and transcription activation than the wild-type HxlR protein [1]. 
+
+In this composite component, we incorporated the mutated K13A version of HxlR gene to examine if HxlR-K13A can lead to an enhanced expression 
+of a red-colored dTomato chromoprotein when formaldehyde is present. In our project, this composite component serves the purpose of detecting 
+the presence of formaldehyde by inducing a color change in the host E. coli. In another composite component developed by us (BBa_K4813022), 
+we made the naturally backward transcribed wild-type HxlR protein to become forwardly transcribed driven by a forward T7 promoter. 
+Hence, the mutated HxlR-K13A in this composite component is also forwardly transcribed driven by the same forward T7 promoter as a comparison.  
+
+Reference:
+Zhu, Rongfeng, et al. “Genetically encoded formaldehyde sensors inspired by a protein intra-helical crosslinking reaction.” 
+Nature Communications, vol. 12, no. 1, 2021, https://doi.org/10.1038/s41467-020-20754-4. 
+Yurimoto, Hiroya, et al. “HXLR, a member of the duf24 protein family, is a DNA-binding protein that acts as a positive regulator of the formaldehyde-induciblehxlaboperon inbacillus subtilis.” 
+Molecular Microbiology, vol. 57, no. 2, 2005, pp. 511–519, https://doi.org/10.1111/j.1365-2958.2005.04702.x. 
+
+<b>
+  Sequence:
+(5’ overlap-T7 RBS-HxlR K13A-BRH1&2-pFormaldehyde-RBS- optimized dTOMATO-Ter -3’ Overlap)
+
+</b>
+
+gagcggataacaattcccc<b>ttctaga</b>tttgtttaactttaagaaggagagcagct<b>ATG</b>cagcttagcttgagccgg<b>ATG</b>gacg
+acaaaaggtttaattgtgag<b>GCA</b>gaattaacgcttgcagtgattggcggtaaatggaaaatgctcattttatggcatttaggaaaa
+gaaggcacaaaacggttcaatgaattaaaaacattgattcctgatattacgcagaagatcctcgtgaatcagctgagagagcttg
+agcaggatatgattgttcacagggaagtgtatccagttgtcccgccgaaggttgaatattctctgaccccgcacggagaaagcct
+catgcctattcttgaagccatgtatgagtgggggaaaggctatatggaattgattgatatcgacaaaaatgtcatgaaagaatcgtt
+g<b>TAA</b>agaaatctgattgtctctcctcacagtatcctccaagtaacttgttgacttcaaagtgcctac<ul>ttctc</ul>aacaaaagaaggaa
+cctatagaatgaacaataattcgaaaaagggagtggatcaaca<b>ATG</b>gtgagcaaaggtgaagaggtgatcaaagaatttat
+gcgctttaaagtgcgtatggaaggtagcatgaatggccatgaatttgaaattgaaggtgaaggcgaaggtcgtccgtatgaagg
+cacccagaccgcaaaactgaaagttaccaaaggtggtccgctgccgtttgcatgggatattctgagtccgcagtttatgtatggta
+gcaaagcctatgttaaacatccggcagatattccggattacaaaaagctgagctttccggaaggttttaaatgggaacgtgtgatg
+aattttgaagatggtggtctggttaccgttacacaggatagcagcctgcaggatggcaccctgatctataaagttaaaatgcgtgg
+caccaattttccgcctgatggtccggttatgcagaaaaagaccatgggttgggaagcaagcaccgaacgtctgtatccgcgtgat
+ggtgttctgaaaggtgaaatccatcaggcactgaaactgaaggatggtggccattatctggttgagtttaaaaccatttacatggcc
+aaaaagccggttcagctgcctggttattactatgttgataccaaactggatatcaccagccacaatgaagattataccatcgtgga
+acagtatgaacgtagcgaaggccgtcatcacctgtttctgtatggcatggatgaactgtacaag<b>TAATAA</b>atacgcccaggca
+tcaaataaaacgaaaggctcagtcgaaagactgggcctttcgttttatctgttgtttgtcggtgaacgctctctactagagtcacactg
+gctcaccttcgggtgggcctttctgcgtttata<b>gaattc</b>cgagctccgtcgacaagctt
 
 
   </pre>
