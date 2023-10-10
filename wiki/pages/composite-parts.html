@@ -4,9 +4,51 @@
 {% block page_content %}
 
 <div class="row mt-4">
-  <b><h1>Human Pratice</h1></b>
+  <b><h1>Composite Parts</h1></b>
+
   <hr>
 </div>
 
+<div class="page_content">
+  <pre>
+  Part type:
+Composite - Device
+
+Selected part name/ID:
+BBa_K4813014
+
+Link:
+http://parts.igem.org/Part:BBa_K4813014
+
+
+Short description/ Name:
+Reverse HxlR-dTomato formaldehyde sensing chromoprotein reporter
+
+Long Description:
+This composite component comprises several elements, including BBa_K3332042 (composed of wild-type HxlR protein, a strong constitutive JS23100 reverse promoter, wild-type BRH1&2 binding sites for HxlR protein, 
+a wild-type promoter for Bacillus subtilis hxlAB operon and a wild-type Bacillus subtilis RBS site) from team iGEM20_XMU-China, 
+an E. coli codon-optimized chromoprotein and red fluorescent protein dTomato coding sequence (BBa_K4813000), 
+and a strong double terminator (B0015). Additionally, the 5' and 3' ends of the composite part feature a 20 base-pair overlap sequence designed 
+for the pUC19 EcoRI restriction site for NEBuilder HiFi assembly (BBa_K4813007 & BBa_K4813008).
+
+The HxlR protein is a formaldehyde-responsive transcription factor from Bacillus subtilis [1]. In the presence of formaldehyde, 
+wild-type HxlR protein binds to two specific binding sites (BRH1&2) and activates the expression of the downstream 
+hxlAB operon in Bacillus subtilis [1]. In our project, we utilise HxlR to promote the expression 
+of a red-colored dTomato chromoprotein when formaldehyde is present. In our project, this composite component serves the purpose of 
+detecting the presence of formaldehyde by inducing a color change in the host E. coli.
+
+Reference:
+Yurimoto, Hiroya, et al. “HXLR, a member of the duf24 protein family, is a DNA-binding protein that acts as a positive regulator of the formaldehyde-induciblehxlaboperon inbacillus subtilis.” Molecular Microbiology, vol. 57, no. 2, 2005, pp. 511–519, https://doi.org/10.1111/j.1365-2958.2005.04702.x. 
+Sequence:
+(5’ overlap- HxlR-JS23100-BRH1&2-pFormaldehyde-RBS- optimized dTOMATO-Ter -3’ Overlap)
+atccccgggtaccgagctcg<b>tctaga</b>TTAcaacgattctttcatgacatttttgtcgatatcaatcaattccatatagcctttccccca
+ctcatacatggcttcaagaataggcatgaggctttctccgtgcggggtcagagaatattcaaccttcggcgggacaactggatac
+acttccctgtgaacaatcatatcctgctcaagctctctcagctgattcacgaggatcttctgcgtaatatcaggaatcaatgtttttaatt
+  </pre>
+
+
+
+
+</div>
 {% endblock %}
 
