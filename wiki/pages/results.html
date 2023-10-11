@@ -5,6 +5,7 @@
 
 {% block page_content %}
 <button id="scrollToTopBtn" title="Go to top">&#8593;</button>
+<button id="scrollToTopBtn" title="Go to top">&#8593;</button>
 <div class="page-content">
   <pre>
       
@@ -18,11 +19,11 @@
     Digestion is performed to cut the vector by EcoRI. As we had unknown concentration of pUC19, 
     we performed two sets of digestion which assumed there were 5 µg and 10 µg of pUC19 respectively.
 
-    <img src="https://static.igem.wiki/teams/4813/wiki/tableforresults.png" width="1000" length="1000">
+    <img src="https://static.igem.wiki/teams/4813/wiki/tableforresults.png" width="600" length="400">
 
     Then we check the linearization by gel.
 
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/image4.png">
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/image4.png" width="600" length="400">
 
     The digestion process appeared to be successful since the digested samples look different compared to the undigested control, 
     so we moved forward with the assembly of the pUC19 vector using our gBlock fragments.
@@ -31,6 +32,217 @@
     which contains regions with a high GC content that proved difficult to synthesize as a single fragment. As a result, 
     we had to redesign the construct and divide it into three separate fragments that would be ordered from IDT gBlock. 
     This approach was necessary to overcome the synthesis difficulties associated with the high GC content regions.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresults2.png" width="600" length="400">
+
+    Next, we followed the manufacturer's instructions to dilute these fragments to a concentration of 100 ng/µl. 
+    Subsequently, we performed HiFi assembly using the linearized pUC19 vectors.
+
+    <hr>
+
+    <B>Preparation of pUC19 and pET28a(+)-FGF2 vectors for HxlR constructs</B>
+    For our other 4 constructs containing HxlR protein to activate expression of our reporter gene in E.coli cells, 
+    constructs 1 and 2 will be inserted into pUC19 plasmids and constructs 3 and 4 will be inserted into pET28a(+)-FGF2  plasmids. 
+    Unfortunately, the precise yield of the pUC19 vectors obtained from miniprep could not be obtained. 
+    The concentration of DNA obtained from miniprep is around 1-4 μg DNA, so we assumed the concentration of our pUC19 vectors to be 1μg DNA in 75μl volume.
+
+    <u><b>Linearization of pUC19 by EcoRI restriction digestion</u></b>
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresults3.png" width="600" length="400">
+
+    <u><b>Linearization of pET28a(+)-FGF2 by Xbai and EcoRI restriction digestion</b></u>
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult4.png" width="600" length="400">
+
+    Next, we followed the manufacturer's instructions to dilute the above 4 gblock fragments to a stock concentration of 10 ng/µl. 
+    Subsequently, we performed HiFi assembly using the linearized pUC19 and pET28a(+)-FGF2 vectors.
+
+    <hr>
+
+    <h2><b>Cloning of constructs</b></h2>
+    
+    <u><B>Hifi assembly of pFrmR constructs into pUC19</B></u>
+    DNA Hifi assembly was conducted to assemble digested pUC19 and our gene constructs to obtain recombinant plasmid.
+
+    We make several setups with controls to ensure the success of our HiFi assembly:
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult5.png" width="600" length="400">
+
+    
+    To ensure the success of the HiFi assembly, it is crucial to calculate the molar ratio of the inserts to the vector. 
+    According to the manufacturer's protocol, for assembly involving 2-3 fragments, a recommended molar ratio of 2:1 for inserts to vector should be used. 
+    On the other hand, for assembly involving 4-6 fragments, a 1:1 molar ratio is suggested.
+
+    Based on these recommendations, we need to carefully calculate the assembly mix by considering the number of fragments involved and 
+    the concentrations and mole of the fragments. However, it is important to note that since we don't have access to a nanodrop machine, 
+    the concentration of the vector will be estimated rather than precisely measured. 
+    This estimation may introduce some uncertainty in the molar ratio calculations.
+
+    The individual mix ratio is shown in the table below:
+
+    For assembly mix A, B and C:
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/resulttableagain.png" width="600" length="400">
+    
+    <u><b>Hifi assembly of HxlR constructs into pUC19 and pET28a(+)-FGF2</b></u>
+    DNA HiFi assembly was conducted to assemble digested pUC19 and pET28a(+)-FGF2 vectors and our gene constructs to obtain recombinant plasmid.
+
+    We make several setups with control to ensure the success of our HiFi assembly:
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult7.png" width="600" length="400">
+
+    To ensure the success of the HiFi assembly, it is crucial to calculate the molar ratio of the inserts to the vector. 
+    According to the manufacturer's protocol, for assembly involving 2-3 fragments, a recommended molar ratio of 2:1 for inserts to vector should be used. 
+
+    The individual assembly mix ratio is shown in the table below:
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult8part1.png" width="600" length="400">
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult8part2.png" width="600" length="400">
+
+    <u><b>Transformation of recombinant plasmid of pFrmR constructs</b></u>
+    Subsequently, the assembled products of pFrmR constructs (A to E) are transformed into TOP10 competent cells using the heat shock transformation method.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/image2.png" width="600" length="400">
+
+    Based on the results obtained, we can see that the colonies expressing the J23100-dTomato construct (BBa_K4813005) 
+    and J23100-tdTomato construct (BBa_K4813006) displayed different colors. The colonies expressing dTomato appeared to have a 
+    deeper and sharper red color compared to the colonies expressing tdTomato. This difference led us to decide that, if time allows, 
+    we will focus our further investigate on the dTomato construct. By choosing dTomato, we expect to obtain more noticeable and distinct results for our study. 
+
+    After conducting the assembly of the pFrmR constructs, we observed the appearance of colonies on the plate, 
+    leading us to proceed with the next step for functional assay. Initially, we believed that the assembly process 
+    was successful based on the presence of these colonies. Nevertheless, we were also aware that colonies appeared 
+    on the control plates without the assembly mix. This raised concerns that the colonies observed on the pFrmR plates 
+    might be false positives. In order to validate the results and confirm the presence of the desired constructs, 
+    we decided to conduct a double enzyme digestion.
+
+    <u><b>Double enzyme digestion for assembly verification</b></u>
+    After picking and culturing the colonies, we performed a mini-prep to extract the plasmids. To confirm the successful insertion of the gene of interest, 
+    we carried out a double enzyme digestion using XbaI and EcoRI. This enzymatic process cleaves the recombinant plasmid into two fragments. 
+    To visualize and analyze the results of the digestion, we conducted gel electrophoresis.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/for-result.png" width="600" length="400">
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforesult9.png" width="600" length="400">
+
+    <u><b>Transformation of recombinant plasmid of HxlR constructs</b></u>
+    We generated Mix & Go chemically competent cells from TOP10 and BL21 E.coli strains for DNA transformation. Subsequently, 
+    the assembled products of HxlR constructs into pUC19 and pET28a(+)-FGF2 vectors are transformed into competent cells using the 
+    Mix & Go. E.coli transformation kit and buffer set we bought from ZYMO research.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/image6.png" width="600" length="400">
+
+    Based on the results obtained, no colonies can be grown for our two constructs of HxlR (Reverse HxlR-dTomato and Reverse HxlR-K13A-dTomato) 
+    transformed in both TOP10 and BL21 E.coli strains. In the positive controls of TOP10 and BL21 E.coli grown on LB agar without antibiotics added, 
+    cells were proved to be viable. This showed that the DNA  transformation into TOP10 and BL21 E.coli cells had not been successful.
+
+    <hr>
+
+    <h3>Unsuccessful functional assay</h3>
+    <u><b>First attempt of formaldehyde functional assay</b></u>
+    We prepared desired concentrations of formaldehyde solution by diluting the 40% formaldehyde solution (methanal) . Following the protocol provided in the protocol page,
+    we incubated our engineered cells with the formaldehyde solution. We selected the range of concentrations based on previous reports from other iGEM teams, 
+    where a concentration of 100 μM of formaldehyde was reported to have a stimulation effect on pFrmR. 
+
+    The specific concentrations used are outlined in the table below:
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult10part1.png" width="600" length="400">
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult10part2.png" width="600" length="400">
+
+    We performed the same procedures and experiments for both the pFrmR-dTomato (BBa_K4813002) and pFrmR-tdTomato constructs (BBa_K4813004).
+
+    An example of our setups are shown in the photos below:
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/image7.png" width="600" length="400">
+
+    After the incubation, we harvest the cells and centrifuge them to form pellets and examine if any red colour is being produced. 
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/for-result-as-well.png" width="600" length="400">
+
+    However, in all the setups, there is no colour change observed when compared with the control setups.
+
+    We tried conducting the experiment several times using different concentrations of formaldehyde and adjusting the incubation conditions. 
+    However, even after these changes, we still didn't see any noticeable differences in the results. It seems that the formaldehyde treatment 
+    didn't have the expected effects on our constructs, despite our efforts to modify the experimental setup.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/for-result-also.png" width="1200" length="1200">
+
+    In our experiments, we made an interesting discovery regarding high formaldehyde concentrations (> 1000 µM) and their impact on E. coli growth. 
+    We observed that when the formaldehyde concentration exceeded this threshold, there was no growth of the E. coli cells. 
+    This indicates that high concentrations of formaldehyde have a noticeable inhibitory effect on E. coli growth.
+
+    However, it is important to note that formaldehyde solutions are typically stabilized with methanol. Therefore, in order to draw a definitive conclusion,
+     further confirmation is required to determine whether the observed effect is solely exerted by formaldehyde or if it is influenced by the presence of methanol.
+
+    After noticing false-positive results on the plates, it became apparent that the colonies formed might only contain the vector instead of the desired recombinant plasmids. 
+    To address this issue and improve the efficiency of our colony screening, we sought guidance from our teachers and engaged in discussions.
+
+    Following these consultations, we have decided to order M13 primers for conducting colony PCR. 
+
+    <u><b>Colony PCR</b></u>
+    Despite multiple attempts to repeat the assembly process on the pFrmR-dTomato constructs (BBa_K4813002) and utilizing colony PCR for screening, 
+    we encountered difficulties and did not achieve the desired results. The colony PCR results showed that our attempts were unsuccessful 
+    in obtaining the correct clones. 
+    The below gel photos shows one the results obtained from our attempts as example:
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/needed-for-result.png" width="600" length="400">
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult11.png" width="600" length="400">
+
+    The small band size seen in the colony PCR results suggests that there is no insert present in the colonies. 
+    Since our inserts are expected to be around 1.1 kbp in size, 
+    we should have seen a band of approximately that size. 
+
+    <hr>
+
+    <h2>Sucessful cloning</h2>
+
+    After numerous trials and adjustments to our assembly conditions, including extending the digestion time to 4 hours and performing gel purification 
+    to improve the purity of vectors, we have successfully cloned the pFrmR-dTomato constructs (BBa_K4813002). Additionally, using these optimized conditions, 
+    we were also able to clone the HxlR-K13A-dTomato construct (BBa_K481300?).
+
+    By increasing the digestion time and adjusting the insert to vector molar ratio to approximately 5:1, we improved the efficiency of our cloning process. 
+    These modifications allowed us to obtain the desired constructs successfully. 
+
+    The gel image presented below shows the colony PCR results showing the expected band size of the colonies containing the successful recombination plasmids.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/image1.png" width="600" length="400">
+
+    As mentioned earlier, the expected band size for the HxlR-K13A-dTomato (BBa_K481300?) colony PCR is approximately 1.5 kbp, 
+    while for the pFrmR-dTomato (BBa_K4813002) colony PCR, it is around 1.1 kbp. The gel diagrams provided above confirm that the 
+    observed band sizes align with these expectations. 
+
+    We were able to successfully proceed with the functional assay using the correct clones just before the deadline.
+
+    <hr>
+
+    <h2>Formaldehyde functional assay</h2>
+
+    
+    However, during our experiments, we encountered a problem with leaky expression in both the pFrmR-dTomato (BBa_K4813002) and HxlR-K13A-dTomato (BBa_K481300?) constructs. 
+    Some colonies on the plates exhibited a pink color even in the absence of formaldehyde. To address this issue and avoid potential false-positive results, 
+    we carefully selected only the white colonies for further analysis in the functional assay with formaldehyde.
+
+    In the functional assay, we incubated the engineered E. coli cells (containing the pFrmR (BBa_K4813002) and HxlR (BBa_K481300?) constructs, respectively) 
+    with different concentrations of formaldehyde as indicated in the table below:
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult12.png" width="600" length="400">
+
+    After harvesting and centrifuging the cells into pellets, we made exciting observations. In the 500 µM formaldehyde concentration setups, 
+    the E. coli expressing the pFrmR-dTomato constructs (BBa_K4813002) displayed an observable color change in the pellet compared to the control 
+    group without formaldehyde treatment. However, all other setups remained white, indicating no significant response.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/also-needed-for-result.png" width="600" length="400">
+
+    In the 1000 µM formaldehyde concentration setup, no turbidity was observed in the pFrmR (BBa_K4813002) setups, and no pellet formed after centrifugation, 
+    suggesting that the growth of E. coli was inhibited. On the other hand, in the HxlR (BBa_K481300?)setups, the 1000 µM formaldehyde concentration setup still 
+    exhibited pellet formation and growth. This leads us to hypothesize that the HxlR operon may enhance the resistance of E. coli cells to formaldehyde. 
+    However, further investigation is needed to confirm this hypothesis.
+
+    In summary, our investigation revealed the following key findings:
+
+    1.The pFrmR promoter is capable of detecting the presence of formaldehyde and activating the production of a chromoprotein.
+    2.Colonies containing the dTomato red chromoprotein (BBa_K4813005) exhibit a more obvious color signal visible to the naked eye compared to colonies containing tdTomato (BBa_K4813006).
+    3.The HxlR operon shows potential for enhancing E. coli's resistance to formaldehyde solution.
+    4.Within the tested conditions, the HxlR device (BBa_K4813005) was unable to detect the presence of formaldehyde.
+    5.Both the pFrmR and HxlR devices displayed leaky expressions.
+
+    Based on these findings, we conducted discussions and developed future plans for the next steps of our project. 
+    For more details, please refer to the <a href="https://2023.igem.wiki/hongkong-jss/engineering"></a> page.
+
+    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/for-result-and-is-needed.png" width="600" length="400"> 
 
 
 
