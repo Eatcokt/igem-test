@@ -2,7 +2,7 @@ body { padding-top: 56px; }
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #388e3c  !important; }
 .bg-hero { 
-     background-image: url(https://static.igem.wiki/teams/4813/wiki/engineering-success/for-front-page-or-team-page.png); 
+     background-image: url(https://static.igem.wiki/teams/4813/wiki/engineering-success/bg-newest.jpeg); 
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +11,7 @@ body { padding-top: 56px; }
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;    
-    height:37vh;
+    height:38vh;
     margin:35px 0 0 0;
         }
 
