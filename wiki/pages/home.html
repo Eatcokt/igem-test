@@ -9,13 +9,26 @@
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
           <h1 class="display-4 text-white mt-5 mb-2">{{ self.title() }}</h1>
-	        <p style="width:80%;" class="lead mb-5 text-white-50"></p>
+	        <p style="width:80%;" class="lead mb-5 text-white-50">{% block lead %}{% endblock %}</p>
         </div>
       </div>
     </div>
   </header>
 <button id="scrollToTopBtn" title="Go to top">&#8593;</button>
-
+<style>
+  .img-left{
+    float:left;
+    width:25%;
+  }
+  .text-right{
+    float:right;
+    width:70%
+  }
+  .pos{
+    position:absolute;
+    width:70%;
+  }
+</style>
 
 <div class="row mt-4">
   <div class="col">
@@ -40,4 +53,4 @@
   </div>
 </div>
 
-{% endblock %}
+{% endblock %}
