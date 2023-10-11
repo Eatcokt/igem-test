@@ -2,13 +2,12 @@ body { padding-top: 56px; }
 .left-aligned { margin-left: auto; }
 .bg-dark { background-color: #388e3c  !important; }
 .bg-hero { 
-    /* background-image: url(https://static.igem.wiki/teams/4813/wiki/73-light-green-gradient.jpg); */ 
+     background-image: url(https://static.igem.wiki/teams/4813/wiki/engineering-success/for-front-page-or-team-page.png); 
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
-    background-color:#609060; 
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;     
