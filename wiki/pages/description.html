@@ -7,9 +7,10 @@
 <button id="scrollToTopBtn" title="Go to top">&#8593;</button>
 <style>
 .container{
-  display:flex;
+  display:grid;
   align-items:center;
-  justify-content:center
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap:5px;
 }
 .rotate-image{
   transform: rotate(45deg);
@@ -20,14 +21,16 @@
 }
 </style>
 <div class="container">
-  <div class="text">
-    <h1> Bioengineered <i> E.coli</i> for Formaldehyde Detection</h1>
-  </div>
+  <div class="text ">
+    <p> Bioengineered <i> E.coli</i> for Formaldehyde Detection</p>
+    </div>
   <div class="rotate-image">
-    <img src="https://static.igem.wiki/teams/4813/wiki/description-head1.jpg" width="30" length="50">
+    <img src="https://static.igem.wiki/teams/4813/wiki/description-head1.jpg" width="100" length="200">
   </div>
-  <img src="https://static.igem.wiki/teams/4813/wiki/description-head2.jpg" width="100" length="100">
+  <img src="https://static.igem.wiki/teams/4813/wiki/description-head2.jpg" width="250" length="250">
   </div>
+
+ 
   
 
 
