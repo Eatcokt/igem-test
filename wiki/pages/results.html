@@ -187,8 +187,8 @@
     </tr>
     <tr>
       <td>J23100-tdTomato-1</td>
-      <td>RFP tdTomato expression driven by a strong constitutive promoter</td>
-      <td>BBa_K4813006</td>
+      <td rowspan="3">RFP tdTomato expression driven by a strong constitutive promoter</td>
+      <td rowspan="3">BBa_K4813006</td>
     </tr>
         <tr>
       <td>J23100-tdTomato-2</td>
@@ -282,9 +282,7 @@
     </tr>
     <tr>
       <td>Reverse HxlR-dTomato</td>
-      <td>Reverse HxlR-dTomato formaldehyde sensing chromoprotein reporter
-
-</td>
+      <td>Reverse HxlR-dTomato formaldehyde sensing chromoprotein reporter</td>
       <td>BBa_K4813014</td>
     </tr>
     <tr>
@@ -311,7 +309,7 @@
 
     <h3 id="title2"><b>Cloning of constructs</b></h3>
     
-    <u><B>Hifi assembly of pFrmR constructs into pUC19</B></u>
+    <u><B>HiFi assembly of pFrmR constructs into pUC19</B></u>
     DNA Hifi assembly was conducted to assemble digested pUC19 and our gene constructs to obtain recombinant plasmid.
 
     We make several setups with controls to ensure the success of our HiFi assembly:
@@ -389,18 +387,100 @@
     </tr>
   </table>
     
-    <u><b>Hifi assembly of HxlR constructs into pUC19 and pET28a(+)-FGF2</b></u>
+    <u><b>HiFi assembly of HxlR constructs into pUC19 and pET28a(+)-FGF2</b></u>
     DNA HiFi assembly was conducted to assemble digested pUC19 and pET28a(+)-FGF2 vectors and our gene constructs to obtain recombinant plasmid.
 
     We make several setups with control to ensure the success of our HiFi assembly:
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult7.png" width="600" length="400">
+
+<table>
+    <tr>
+        <th>Assembly Mix</th>
+        <th>Content</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>linearized pUC19 with Reverse HxlR-dTomato</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>linearized pUC19 with Reverse HxlR-K13A-dTomato</td>
+    </tr>
+        <tr>
+        <td>3</td>
+        <td>linearized pET28a(+)-FGF2 with Forward HxlR-dTomato</td>
+    </tr>
+            <tr>
+      <td>4</td>
+        <td>linearized pET28a(+)-FGF2 with Forward HxlR-K13A-dTomato</td>
+    </tr>
+                <tr>
+      <td>5</td>
+        <td>NEBuilder HiFi DNA assembly positive control</td>
+    </tr>
+  </table>
 
     To ensure the success of the HiFi assembly, it is crucial to calculate the molar ratio of the inserts to the vector. 
     According to the manufacturer's protocol, for assembly involving 2-3 fragments, a recommended molar ratio of 2:1 for inserts to vector should be used. 
 
     The individual assembly mix ratio is shown in the table below:
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult8part1.png" width="600" length="400">
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult8part2.png" width="600" length="400">
+
+
+<table>
+    <tr>
+        <th></th>
+        <th>Reverse HxlR-dTomato (µl)</th>
+        <th>Reverse HxlR-K13A-dTomato (µl)</th>
+    </tr>
+    <tr>
+      <td>Fragment</td>
+      <td>5.5 (0.06pmol)</td>
+      <td>5.5 (0.06pmol)</td>
+    </tr>
+    <tr>
+      <td>dH2O</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>pUC19 (diluted to)</td>
+      <td>0.03 pmol</td>
+      <td>0.03 pmol</td>
+        <td>0.03 pmol</td>
+    </tr>
+    <tr>
+      <td>HiFi Assembly Mix</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+  </table>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Forward HxlR-dTomato (µl)</th>
+        <th>Forward HxlR-K13A-dTomato (µl)</th>
+    </tr>
+    <tr>
+      <td>Fragment</td>
+      <td>2.7 (0.03pmol)</td>
+      <td>2.7 (0.03pmol)</td>
+    </tr>
+    <tr>
+      <td>dH2O</td>
+      <td>5.3</td>
+      <td>5.3</td>
+    </tr>
+    <tr>
+      <td>pUC19 (diluted to)</td>
+      <td>0.016 pmol</td>
+      <td>0.016 pmol</td>
+    </tr>
+    <tr>
+      <td>HiFi Assembly Mix</td>
+      <td>10</td>
+      <td>10</td>
+    </tr>
+  </table>
 
     <u><b>Transformation of recombinant plasmid of pFrmR constructs</b></u>
     Subsequently, the assembled products of pFrmR constructs (A to E) are transformed into TOP10 competent cells using the heat shock transformation method.
@@ -425,7 +505,41 @@
     To visualize and analyze the results of the digestion, we conducted gel electrophoresis.
 
     <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/for-result.png" class="center-image responsive-image">
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforesult9.png" width="600" length="400">
+
+<table>
+    <tr>
+        <th>Lane</th>
+        <th>Content</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>NEB 1kbp+ DNA Ladder</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>No digestion control of colony 1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Colony 1</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Colony 2</td>
+    </tr>
+        <tr>
+      <td>5</td>
+      <td>Colony 3</td>
+    </tr>
+        <tr>
+      <td>6</td>
+      <td>Colony 4</td>
+    </tr>
+        <tr>
+      <td>7</td>
+      <td>Colony 5</td>
+    </tr>
+  </table>
 
     <u><b>Transformation of recombinant plasmid of HxlR constructs</b></u>
     We generated Mix & Go chemically competent cells from TOP10 and BL21 E.coli strains for DNA transformation. Subsequently, 
@@ -452,9 +566,9 @@
 
     We performed the same procedures and experiments for both the pFrmR-dTomato (BBa_K4813002) and pFrmR-tdTomato constructs (BBa_K4813004).
 
-    An example of our setups are shown in the photos below:
+    An example of our setups is shown in the photo below:
 
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/image7.png" class="center-image responsive-image">
+    <img src="https://static.igem.wiki/teams/4813/wiki/20231012-uploads/result-tubes.png" class="center-image responsive-image">
 
     After the incubation, we harvest the cells and centrifuge them to form pellets and examine if any red colour is being produced. 
 
@@ -487,8 +601,21 @@
     The below gel photos shows one the results obtained from our attempts as example:
 
     <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/needed-for-result.png" class="center-image responsive-image">
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult11.png" class="center-image responsive-image">
-
+<table>
+    <tr>
+        <th>Lane</th>
+        <th>Content</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>NEB 1kbp+ DNA Ladder</td>
+    </tr>
+    <tr>
+      <td>2-9</td>
+      <td>PCR products from different colonies</td>
+    </tr>
+  </table>
+  
     The small band size seen in the colony PCR results suggests that there is no insert present in the colonies. 
     Since our inserts are expected to be around 1.1 kbp in size, 
     we should have seen a band of approximately that size. 
