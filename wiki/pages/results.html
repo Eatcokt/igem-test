@@ -38,7 +38,7 @@
         
         .flex-container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             justify-items: center;
         }
         
@@ -92,6 +92,15 @@
             height: auto;
         }
    
+    table {
+      width: 70%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      padding: 8px;
+      border: 1px solid black;
+    }
     </style>
 
    <div class="footer-container"><!--s~-->
@@ -100,7 +109,8 @@
             <a class="flex-child" href="#title2">Cloning</a>
             <a class="flex-child" href="#title3">Failed attempts</a>
             <a class="flex-child" href="#title4">Successful attempts</a>
-            <a class="flex-child" href="#title5">Functional assay</a>
+            <a class="flex-child" href="#title5">Comparison of RFP</a>
+            <a class="flex-child" href="#title6">Functional assay</a>
         </div>
     </div><!--e~-->
   
@@ -118,6 +128,41 @@
     <b>Linearization of pUC19 by EcoRI restriction digestion</b>
     Digestion is performed to cut the vector by EcoRI. As we had unknown concentration of pUC19, 
     we performed two sets of digestion which assumed there were 5 µg and 10 µg of pUC19 respectively.
+
+
+<table>
+    <tr>
+        <th></th>
+        <th>5 µg pUC19 (µl)</th>
+        <th>10 µg pUC19 (µl)</th>
+        <th>No enzyme control (µl)</th>
+    </tr>
+    <tr>
+      <td>pUC19 DNA</td>
+      <td>15 (1µg)</td>
+      <td>7.5 (1µg)</td>
+        <td>15</td>
+    </tr>
+    <tr>
+      <td>CutSmart Buffer</td>
+      <td>5</td>
+      <td>5</td>
+        <td>5</td>
+    </tr>
+        <tr>
+      <td>EcoRI-HF</td>
+      <td>2</td>
+      <td>2</td>
+        <td>0</td>
+    </tr>
+        <tr>
+      <td>dH2O</td>
+      <td>28</td>
+      <td>35.5</td>
+        <td>30</td>
+    </tr>
+  </table>
+
 
     <img src="https://static.igem.wiki/teams/4813/wiki/tableforresults.png" class="center-image responsive-image">
 
@@ -307,8 +352,16 @@
     We were able to successfully proceed with the functional assay using the correct clones just before the deadline.
 
     <hr>
+    <h3 id="title5">Colour comparison of dTomato and tdTomato by naked eyes</h3>
+In our initial cloning attempt, while we were unable to clone the formaldehyde-sensing devices, we successfully cloned the J23100-dTomato (BBa_K4813005) construct and J23100-tdTomato (BBa_K4813006). The colonies expressing these constructs were used to compare their color through direct visual observation.
 
-    <h3 id="title5">Formaldehyde functional assay</h2>
+After 12 hours of incubation, we observed a noticeable variation in color expression between the two constructs. The colonies expressing dTomato exhibited a significantly stronger red color compared to those expressing tdTomato. This indicates that dTomato would be more suitable for our intended purpose of creating a sensing device for easy color detection.
+
+Additionally, by examining the colonies, we noticed that the average size of the dTomato-expressing colonies was larger than that of the tdTomato-expressing colonies. This led us to hypothesize that the lighter color in the tdTomato colonies could be attributed to the larger size of the tdTomato protein. The expression of this protein likely consumes more resources from the bacterial cells, potentially hindering their growth rate and resulting in lower color expression.
+
+<hr>
+
+    <h3 id="title6">Formaldehyde functional assay</h3>
 
     
     However, during our experiments, we encountered a problem with leaky expression in both the pFrmR-dTomato (BBa_K4813002) 
