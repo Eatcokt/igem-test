@@ -6,6 +6,12 @@
 {% block page_content %}
 
 <button id="scrollToTopBtn" title="Go to top">&#8593;</button>
+  
+    <!--s~-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--e~-->
+
 <style>
   table,th,td{
     border:1px solid black;
@@ -20,8 +26,63 @@
     margin-left:auto;
     margin-right:auto
   }
-  
+
+  /*s~*/
+        html {
+            scroll-behavior: smooth;
+        }
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .responsive-image {
+            max-width: 650px;
+            height: auto;
+        }
+
+        .numbered-list {
+            list-style-type: decimal;
+        }
+        .footer-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+            width: calc(100% - 64px);
+            background: slategray;
+            margin: 32px;
+            border-radius: 16px;
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            background-color: #66bb6a;
+            font-weight: bold;
+            max-width: 1024px;
+            margin: 16px auto;
+            left: 0;
+            right: 0;
+        }
+        .flex-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-items: center;
+        }
+        
+        .flex-child {
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+            color: white;
+        }
+        a:link:active, a:visited:active {
+            color: (internal value);
+        }
+  /*e~*/
 </style>
+
 <div class="row mt-4">
   <b><h1>Human Pratice</h1></b>
   <hr>
@@ -67,7 +128,7 @@
   <hr>
 
   <div class="row mt-4">
-    <b><h2> Identifying stakeholders and their concerns</h2></b>
+    <b><h2 id="title1"> Identifying stakeholders and their concerns</h2></b>
     <div class=""col">
     <p>
      Members of team HongKong-JSS come from 5 different schools with a diverse background.
@@ -260,7 +321,7 @@
     <br>
 
     <div class="row mt-4">
-      <b><h1>Integrated Human Practices</h1></b>
+      <b><h1 id="title2">Integrated Human Practices</h1></b>
       <hr>
       <p>
           Given our concern about the danger of formaldehyde, we launched this project and designed a formaldehyde detection machine using GM E. coli. During the course, we received help and learnt a lot from different stakeholders. Their critical view and feedback helped us to optimize our project plan and solution design into one that is more effective, feasible, and likely to be successful. 
@@ -428,7 +489,7 @@
       </a>
   <br>
   <br>
-  <h2><b> Education and Communication</b></h2>
+  <h2 id="title3"><b> Education and Communication</b></h2>
     <p> We have always wanted to seek for more opportunities to include more people in shaping Synthetic Biology. We believe that education and promotion of Synthetic Biology could be done even among primary students and junior secondary students.</p>
     <p>Our education program aimed to: </p>
     <ol>
@@ -510,18 +571,17 @@ More than 100 primary school students and 60 junior secondary students from over
     <br>    
 <center> <p><i><b> Sample question from our Kahoot MC Games to raise the interest of primary students  in our seminar and workshops</b></i></p></center>
     
-  
-  
   </div>
-  
-
-
-
-
-
-
-
 </div>
 
+    <!--s~-->
+    <div class="footer-container">
+        <div class="flex-container">
+            <a class="flex-child" href="#title1">Stakeholders Surveys</a>
+            <a class="flex-child" href="#title2">Integrated Human Practice</a>
+            <a class="flex-child" href="#title3">Education and Communication</a>                
+        </div>
+    </div>
+    <!--e~-->
 
 {% endblock %}
