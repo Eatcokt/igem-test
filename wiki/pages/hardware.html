@@ -106,169 +106,173 @@ We write an Arduino program to instruct our device to:
 
 
 <pre style="border:solid; padding:20px 0 0 40px; border-width:thin;">
-#include <WiFi.h>
-#include <HTTPClient.h>
-#include "esp_camera.h"
-
-const char* ssid = "ABCD";
-const char* password = "00000000";
-const char* iftttWebhookURL = "https://maker.ifttt.com/trigger/IGEM/json/with/key/wSVPLTFjTMq05vxEz3tl_";
-
-const int ledPin = 4;   // GPIO pin for your LED (previously 2)
-const int fanPin = 12;  // GPIO pin for fan control
-
-bool ledState = false;
-unsigned long previousMillis = 0;
-const long interval = 3000;       // 3 seconds
-const long fanOnDuration = 2 * 60 * 1000;  // 2 minutes in milliseconds
-const long fanOffDuration = 28 * 60 * 1000; // 28 minutes in milliseconds
-const long ledOnDuration = 250;   // 1/4 second in milliseconds
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
-  }
-
-  static camera_config_t camera_config = {
-      .pin_pwdn = 32,
-      .pin_reset = -1,
-      .pin_xclk = 0,
-      .pin_sscb_sda = 26,
-      .pin_sscb_scl = 27,
-      .pin_d7 = 35,
-      .pin_d6 = 34,
-      .pin_d5 = 39,
-      .pin_d4 = 36,
-      .pin_d3 = 21,
-      .pin_d2 = 19,
-      .pin_d1 = 18,
-      .pin_d0 = 5,
-      .pin_vsync = 25,
-      .pin_href = 23,
-      .pin_pclk = 22,
-      .xclk_freq_hz = 20000000,
-      .ledc_timer = LEDC_TIMER_0,
-      .ledc_channel = LEDC_CHANNEL_0,
-      .pixel_format = PIXFORMAT_RGB565,
-      .frame_size = FRAMESIZE_VGA,
-      .fb_count = 1
-    };
-
-  if (esp_camera_init(&camera_config) != ESP_OK) {
-    Serial.println("Camera initialization failed");
-    return;
-  }
-
-  // Initialize the LED pin as an output
-  pinMode(ledPin, OUTPUT);
-  // Initialize the fan control pin as an output
-  pinMode(fanPin, OUTPUT);
-  // Start with the LED off
-  ledcAttachPin(ledPin, 0);
-  ledcSetup(0, 5000, 8); // 5000 Hz PWM frequency, 8-bit resolution
-  ledcWrite(0, 18); // Set the LED brightness to 7% of maximum intensity (30/255)
-}
-
-void loop() {
-  unsigned long currentMillis = millis();
-
-  // Fan control logic
-  if (currentMillis - previousMillis >= fanOnDuration) {
-    // Turn the fan off after 2 minutes
-    digitalWrite(fanPin, LOW);
-    previousMillis = currentMillis;
-  } else if (currentMillis - previousMillis >= fanOffDuration) {
-    // Turn the fan on after 28 minutes
-    digitalWrite(fanPin, HIGH);
-    previousMillis = currentMillis;
-  }
-
-  // LED flash once every 3 seconds
-  if (currentMillis - previousMillis >= interval) {
-    previousMillis = currentMillis;
-
-    if (ledState) {
-      ledcWrite(0, 0); // LED off (brightness 0)
-      ledState = false;
-    } else {
-      ledcWrite(0, 18); // Set the LED brightness to 7% of maximum intensity (30/255)
-      delay(ledOnDuration); // Wait for 1/4 second
-      ledcWrite(0, 0); // LED off (brightness 0)
-      ledState = false;
-    }
-  }
-
-  camera_fb_t* fb = esp_camera_fb_get();
-  if (!fb) {
-    Serial.println("Camera capture failed");
-    return;
-  }
-
-  // Calculate the middle part of the frame (adjust these values as needed)
-  int startPixel = fb->len / 3;
-  int endPixel = 2 * fb->len / 3;
-
-  int totalR = 0;
-  int totalG = 0;
-  int totalB = 0;
-
-  for (int i = startPixel; i < endPixel; i += 2) {
-    uint16_t pixel = fb->buf[i] | (fb->buf[i + 1] << 8);
-    uint8_t r = (pixel >> 11) & 0x1F;
-    uint8_t g = (pixel >> 5) & 0x3F;
-    uint8_t b = pixel & 0x1F;
-
-    // Convert the RGB565 values to 0-255
-    r = r * 255 / 31;
-    g = g * 255 / 63;
-    b = b * 255 / 31;
-
-    totalR += r;
-    totalG += g;
-    totalB += b;
-  }
-
-  // Calculate the average RGB values for the middle part
-  int pixelCount = (endPixel - startPixel) / 2; // Number of pixels in the middle part
-  int avgR = totalR / pixelCount;
-  int avgG = totalG / pixelCount;
-  int avgB = totalB / pixelCount;
-
-  Serial.print("Average R: ");
-  Serial.print(avgR);
-  Serial.print(" G: ");
-  Serial.print(avgG);
-  Serial.print(" B: ");
-  Serial.println(avgB);
-
-  // Check if the colour is "red" based on thresholds (you can adjust these thresholds)
-  int redThreshold = 80; // Adjust as needed
-  int greenThreshold = 110; // Adjust as needed
-  int blueThreshold = 130; // Adjust as needed
-  bool isRed = (avgR > redThreshold) && (avgG < greenThreshold) && (avgB < blueThreshold);
-
-  if (isRed) {
-    Serial.println("Red Color Detected!");
-    // Send an IFTTT request here
-    if (WiFi.status() == WL_CONNECTED) {
-      HTTPClient http;
-      http.begin(iftttWebhookURL);
-      int httpResponseCode = http.POST("");
-      if (httpResponseCode > 0) {
-        Serial.println("IFTTT request sent successfully");
-      } else {
-        Serial.println("IFTTT request failed");
+  #include <WiFi.h>
+    #include <HTTPClient.h>
+    #include "esp_camera.h"
+    
+    const char* ssid = "ABCD";
+    const char* password = "00000000";
+    const char* iftttWebhookURL = "https://maker.ifttt.com/trigger/IGEM/json/with/key/wSVPLTFjTMq05vxEz3tl_";
+    
+    const int ledPin = 4;    // GPIO pin for your LED (previously 2)
+    const int fanPin = 12;   // GPIO pin for controlling the fan (added)
+    
+    bool ledState = false;
+    bool fanState = false;   // Initialize the fan state as off
+    unsigned long previousMillis = 0;
+    const long interval = 3000;
+    const long ledOnDuration = 250;
+    const long fanOnDuration = 5000; // Fan on for 5 seconds
+    const long fanOffDuration = 5000; // Fan off for 5 seconds
+    unsigned long fanPreviousMillis = 0; 
+    
+    void setup() {
+      Serial.begin(115200);
+      WiFi.begin(ssid, password);
+      while (WiFi.status() != WL_CONNECTED) {
+        delay(1000);
+        Serial.println("Connecting to WiFi...");
       }
-      http.end();
+    
+      static camera_config_t camera_config = {
+          .pin_pwdn = 32,
+          .pin_reset = -1,
+          .pin_xclk = 0,
+          .pin_sscb_sda = 26,
+          .pin_sscb_scl = 27,
+          .pin_d7 = 35,
+          .pin_d6 = 34,
+          .pin_d5 = 39,
+          .pin_d4 = 36,
+          .pin_d3 = 21,
+          .pin_d2 = 19,
+          .pin_d1 = 18,
+          .pin_d0 = 5,
+          .pin_vsync = 25,
+          .pin_href = 23,
+          .pin_pclk = 22,
+          .xclk_freq_hz = 20000000,
+          .ledc_timer = LEDC_TIMER_0,
+          .ledc_channel = LEDC_CHANNEL_0,
+          .pixel_format = PIXFORMAT_RGB565,
+          .frame_size = FRAMESIZE_VGA,
+          .fb_count = 1
+        };
+    
+      if (esp_camera_init(&camera_config) != ESP_OK) {
+        Serial.println("Camera initialization failed");
+        return;
+      }
+    
+      pinMode(ledPin, OUTPUT);
+      pinMode(fanPin, OUTPUT);  // Set the fan pin as an output
+      ledcAttachPin(ledPin, 0);
+      ledcSetup(0, 5000, 8);
+      ledcWrite(0, 18);
     }
-  }
-  esp_camera_fb_return(fb);
-  delay(100); // Adjust the delay time as needed for stability
-}
-
+    
+    void loop() {
+      unsigned long currentMillis = millis();
+    
+      // LED flash once every 3 seconds
+      if (currentMillis - previousMillis >= interval) {
+        previousMillis = currentMillis;
+    
+        if (ledState) {
+          ledcWrite(0, 0); // LED off (brightness 0)
+          ledState = false;
+        } else {
+          ledcWrite(0, 18); // Set the LED brightness to 7% of maximum intensity (30/255)
+          delay(ledOnDuration); // Wait for 1/4 second
+          ledcWrite(0, 0); // LED off (brightness 0)
+          ledState = false;
+        }
+      }
+    
+      // Control the fan based on a 5-second on and 5-second off cycle
+      if (fanState) {
+        if (currentMillis - fanPreviousMillis >= fanOnDuration) {
+          digitalWrite(fanPin, LOW); // Turn the fan off
+          fanState = false;
+          fanPreviousMillis = currentMillis;
+        }
+      } else {
+        if (currentMillis - fanPreviousMillis >= fanOffDuration) {
+          digitalWrite(fanPin, HIGH); // Turn the fan on
+          fanState = true;
+          fanPreviousMillis = currentMillis;
+        }
+      }
+    
+      camera_fb_t* fb = esp_camera_fb_get();
+      if (!fb) {
+        Serial.println("Camera capture failed");
+        return;
+      }
+    
+      // Calculate the middle part of the frame (adjust these values as needed)
+      int startPixel = fb->len / 3;
+      int endPixel = 2 * fb->len / 3;
+    
+      int totalR = 0;
+      int totalG = 0;
+      int totalB = 0;
+    
+      for (int i = startPixel; i < endPixel; i += 2) {
+        uint16_t pixel = fb->buf[i] | (fb->buf[i + 1] << 8);
+        uint8_t r = (pixel >> 11) & 0x1F;
+        uint8_t g = (pixel >> 5) & 0x3F;
+        uint8_t b = pixel & 0x1F;
+    
+        // Convert the RGB565 values to 0-255
+        r = r * 255 / 31;
+        g = g * 255 / 63;
+        b = b * 255 / 31;
+    
+        totalR += r;
+        totalG += g;
+        totalB += b;
+      }
+    
+      // Calculate the average RGB values for the middle part
+      int pixelCount = (endPixel - startPixel) / 2; // Number of pixels in the middle part
+      int avgR = totalR / pixelCount;
+      int avgG = totalG / pixelCount;
+      int avgB = totalB / pixelCount;
+    
+      Serial.print("Average R: ");
+      Serial.print(avgR);
+      Serial.print(" G: ");
+      Serial.print(avgG);
+      Serial.print(" B: ");
+      Serial.println(avgB);
+    
+      // Check if the color is "red" based on thresholds (you can adjust these thresholds)
+      int redThreshold = 80; // Adjust as needed
+      int greenThreshold = 110; // Adjust as needed
+      int blueThreshold = 130; // Adjust as needed
+      bool isRed = (avgR > redThreshold) && (avgG < greenThreshold) && (avgB < blueThreshold);
+    
+      if (isRed) {
+        Serial.println("Red Color Detected!");
+        // Send an IFTTT request here
+        if (WiFi.status() == WL_CONNECTED) {
+          HTTPClient http;
+          http.begin(iftttWebhookURL);
+          int httpResponseCode = http.POST("");
+          if (httpResponseCode > 0) {
+            Serial.println("IFTTT request sent successfully");
+          } else {
+            Serial.println("IFTTT request failed");
+          }
+          http.end();
+        }
+      }
+    
+      esp_camera_fb_return(fb);
+    
+      delay(100); // Adjust the delay time as needed for stability
+    }
 
 </pre>
 <p>If you want to explore how to make a smart device with IFTTT, feel free to use the above coding as a reference.
