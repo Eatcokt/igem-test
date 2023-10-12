@@ -4,13 +4,112 @@
 {% block lead %}You can describe the results of your project and your future plans here.{% endblock %}
 
 {% block page_content %}
+
+<head>
+    <!--s~-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--e~-->
+
+    <style>
+        /*s~*/
+        html {
+            scroll-behavior: smooth;
+        }
+        /*e~*/  
+/*s~*/
+        .footer-container {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+            width: calc(100% - 64px);
+            background: slategray;
+            margin: 32px;
+            border-radius: 16px;
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            background-color: #66bb6a;
+            font-weight: bold;
+            max-width: 1024px;
+            margin: 16px auto;
+            left: 0;
+            right: 0;
+        }
+        
+        .flex-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            justify-items: center;
+        }
+        
+        .flex-child {
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+            color: white;
+        }
+        a:link:active, a:visited:active {
+            color: (internal value);
+        }
+        /*e~*/
+
+        h1 {
+            display: inline;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        h2 {
+            display: inline;
+            font-size: 25px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        h3 {
+            display: inline;
+            font-size: 20px;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .responsive-image {
+            max-width: 650px;
+            height: auto;
+        }
+   
+    </style>
+
+   <div class="footer-container"><!--s~-->
+        <div class="flex-container">
+            <a class="flex-child" href="#title1">pUC19 Prep</a>
+            <a class="flex-child" href="#title2">Cloning</a>
+            <a class="flex-child" href="#title3">Failed attempts</a>
+            <a class="flex-child" href="#title4">Successful attempts</a>
+            <a class="flex-child" href="#title5">Functional Assay</a>
+        </div>
+    </div><!--e~-->
+  
 <button id="scrollToTopBtn" title="Go to top">&#8593;</button>
 <button id="scrollToTopBtn" title="Go to top">&#8593;</button>
 <div class="page-content">
   <pre>
       
-    <h3><b>Preparation of pUC19 vectors for <i>pFrmR</i> constructs</b></h3>
-    <B>Amplification of pUC19 vectors</B>
+    <h3 id="title1"><b>Preparation of pUC19 vectors for <i>pFrmR</i> constructs</b></h3>
+    <b>Amplification of pUC19 vectors</b>
     We transformed pUC19 positive controls into TOP10 competent cells using the heat shock method, following the given protocols at the protocol page. 
     Unfortunately, without a spectrophotometer, we couldn't determine the precise yield of the pUC19 vectors obtained. As a solution, 
     we conducted two sets of restriction digestions using the EcoRI enzyme to convert varying concentrations of the pUC19 vectors into a linearized form.
@@ -57,7 +156,7 @@
 
     <hr>
 
-    <h2><b>Cloning of constructs</b></h2>
+    <h3 id="title2"><b>Cloning of constructs</b></h3>
     
     <u><B>Hifi assembly of pFrmR constructs into pUC19</B></u>
     DNA Hifi assembly was conducted to assemble digested pUC19 and our gene constructs to obtain recombinant plasmid.
@@ -132,7 +231,7 @@
 
     <hr>
 
-    <h3>Unsuccessful functional assay</h3>
+    <h3 id="title3">Unsuccessful functional assay</h3>
     <u><b>First attempt of formaldehyde functional assay</b></u>
     We prepared desired concentrations of formaldehyde solution by diluting the 40% formaldehyde solution (methanal) . Following the protocol provided in the protocol page,
     we incubated our engineered cells with the formaldehyde solution. We selected the range of concentrations based on previous reports from other iGEM teams, 
@@ -187,7 +286,7 @@
 
     <hr>
 
-    <h2>Sucessful cloning</h2>
+    <h3 id="title4">Successful cloning</h3>
 
     After numerous trials and adjustments to our assembly conditions, including extending the digestion time to 4 hours and performing gel purification 
     to improve the purity of vectors, we have successfully cloned the pFrmR-dTomato constructs (BBa_K4813002). Additionally, using these optimized conditions, 
@@ -208,7 +307,7 @@
 
     <hr>
 
-    <h2>Formaldehyde functional assay</h2>
+    <h3 id="title5">Formaldehyde functional assay</h2>
 
     
     However, during our experiments, we encountered a problem with leaky expression in both the pFrmR-dTomato (BBa_K4813002) 
