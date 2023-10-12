@@ -70,7 +70,7 @@
 
         h3 {
             display: inline;
-            font-size: 222px;
+            font-size: 22px;
             margin-top: 2em;
             margin-bottom: 2em;
         }
@@ -129,7 +129,6 @@
     Digestion is performed to cut the vector by EcoRI. As we had unknown concentration of pUC19, 
     we performed two sets of digestion which assumed there were 5 µg and 10 µg of pUC19 respectively.
 
-
 <table>
     <tr>
         <th></th>
@@ -163,9 +162,6 @@
     </tr>
   </table>
 
-
-    <img src="https://static.igem.wiki/teams/4813/wiki/tableforresults.png" class="center-image responsive-image">
-
     Then we check the linearization by gel.
 
     <img src="https://static.igem.wiki/teams/4813/wiki/20231012-uploads/result-1.png" class="center-image responsive-image">
@@ -178,7 +174,39 @@
     we had to redesign the construct and divide it into three separate fragments that would be ordered from IDT gBlock. 
     This approach was necessary to overcome the synthesis difficulties associated with the high GC content regions.
 
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresults2.png" class="center-image responsive-image">
+<table>
+    <tr>
+        <th>Fragment name</th>
+        <th>Description</th>
+        <th>Part registry entry</th>
+    </tr>
+    <tr>
+      <td>J23100-dTomato</td>
+      <td>RFP dTomato expression driven by a strong constitutive promoter</td>
+      <td>BBa_K4813005</td>
+    </tr>
+    <tr>
+      <td>J23100-tdTomato-1</td>
+      <td>RFP tdTomato expression driven by a strong constitutive promoter</td>
+      <td>BBa_K4813006</td>
+    </tr>
+        <tr>
+      <td>J23100-tdTomato-2</td>
+    </tr>
+            <tr>
+      <td>J23100-tdTomato-3</td>
+    </tr>
+    <tr>
+      <td>pFrmR-dTomato</td>
+      <td>RFP dTomato expression driven by a formaldehyde inducible promoter</td>
+      <td>BBa_K4813002</td>
+    </tr>
+    <tr>
+      <td>pFrmR-tdTomato</td>
+      <td>RFP tdTomato expression driven by a formaldehyde inducible promoter</td>
+      <td>BBa_K4813004</td>
+    </tr>
+  </table>
 
     Next, we followed the manufacturer's instructions to dilute these fragments to a concentration of 100 ng/µl. 
     Subsequently, we performed HiFi assembly using the linearized pUC19 vectors.
@@ -191,11 +219,90 @@
     Unfortunately, the precise yield of the pUC19 vectors obtained from miniprep could not be obtained. 
     The concentration of DNA obtained from miniprep is around 1-4 μg DNA, so we assumed the concentration of our pUC19 vectors to be 1μg DNA in 75μl volume.
 
+
     <u><b>Linearization of pUC19 by EcoRI restriction digestion</u></b>
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresults3.png" width="600" length="400">
+
+<table>
+    <tr>
+        <th></th>
+        <th>pUC19 (µl)</th>
+    </tr>
+    <tr>
+      <td>pUC19 DNA</td>
+      <td>16.5 (220 ng)</td>
+    </tr>
+    <tr>
+      <td>CutSmart Buffer</td>
+      <td>2</td>
+    </tr>
+        <tr>
+        <td>EcoRI-HF</td>
+        <td>1</td>
+    </tr>
+            <tr>
+      <td>dH2O</td>
+        <td>0.5</td>
+    </tr>
+  </table>
 
     <u><b>Linearization of pET28a(+)-FGF2 by Xbai and EcoRI restriction digestion</b></u>
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult4.png" width="600" length="400">
+
+<table>
+    <tr>
+        <th></th>
+        <th>pET28a(+)-FGF2 (µl)</th>
+    </tr>
+    <tr>
+      <td>pET28a DNA</td>
+      <td>1.1 µl (500ng)</td>
+    </tr>
+    <tr>
+      <td>CutSmart Buffer</td>
+      <td>2</td>
+    </tr>
+        <tr>
+        <td>EcoRI-HF</td>
+        <td>0.5</td>
+    </tr>
+            <tr>
+      <td>XbaI</td>
+        <td>0.5</td>
+    </tr>
+                <tr>
+      <td>dH2O</td>
+        <td>15.9</td>
+    </tr>
+  </table>
+
+<table>
+    <tr>
+        <th>Fragment name</th>
+        <th>Description</th>
+        <th>Part registry entry</th>
+    </tr>
+    <tr>
+      <td>Reverse HxlR-dTomato</td>
+      <td>Reverse HxlR-dTomato formaldehyde sensing chromoprotein reporter
+
+</td>
+      <td>BBa_K4813014</td>
+    </tr>
+    <tr>
+      <td>Reverse HxlR-K13A-dTomato</td>
+      <td>Reverse HxlR-K13A-dTomato formaldehyde sensing chromoprotein reporter</td>
+      <td>BBa_K4813025</td>
+    </tr>
+    <tr>
+      <td>Forward HxlR-dTomato</td>
+      <td>Forward HxlR-dTomato formaldehyde sensing chromoprotein reporter</td>
+      <td>BBa_K4813022</td>
+    </tr>
+    <tr>
+      <td>Forward HxlR-K13A-dTomato</td>
+      <td>Forward HxlR-K13A-dTomato formaldehyde sensing chromoprotein reporter</td>
+      <td>BBa_K4813024 </td>
+    </tr>
+  </table>
 
     Next, we followed the manufacturer's instructions to dilute the above 4 gblock fragments to a stock concentration of 10 ng/µl. 
     Subsequently, we performed HiFi assembly using the linearized pUC19 and pET28a(+)-FGF2 vectors.
@@ -209,7 +316,32 @@
 
     We make several setups with controls to ensure the success of our HiFi assembly:
 
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/tableforresult5.png" width="600" length="400">
+<table>
+    <tr>
+        <th>Assembly Mix</th>
+        <th>Content</th>
+    </tr>
+    <tr>
+      <td>A</td>
+      <td>linearized pUC19 with pFrmR-dTomato</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>linearized pUC19 with J23100-dTomato</td>
+    </tr>
+        <tr>
+        <td>C</td>
+        <td>linearized pUC19 with J23100-tdTomato</td>
+    </tr>
+            <tr>
+      <td>D</td>
+        <td>linearized pUC19 with pFrmR-tdTomato</td>
+    </tr>
+                <tr>
+      <td>E</td>
+        <td>linearized pUC19 without assembly mix</td>
+    </tr>
+  </table>
 
     
     To ensure the success of the HiFi assembly, it is crucial to calculate the molar ratio of the inserts to the vector. 
@@ -224,7 +356,38 @@
     The individual mix ratio is shown in the table below:
 
     For assembly mix A, B and C:
-    <img src="https://static.igem.wiki/teams/4813/wiki/resultsupdated/resulttableagain.png" width="600" length="400">
+<table>
+    <tr>
+        <th></th>
+        <th>A (µl)</th>
+        <th>B (µl)</th>
+        <th>C (µl)</th>
+    </tr>
+    <tr>
+      <td>Fragment</td>
+      <td>4.2 (0.06pmol)</td>
+      <td>3.6 (0.06pmol)</td>
+        <td>6.3 (0.06pmol)</td>
+    </tr>
+    <tr>
+      <td>dH2O</td>
+      <td>10.3</td>
+      <td>10.9</td>
+        <td>8.2</td>
+    </tr>
+    <tr>
+      <td>pUC19 (diluted to)</td>
+      <td>0.03 pmol</td>
+      <td>0.03 pmol</td>
+        <td>0.03 pmol</td>
+    </tr>
+    <tr>
+      <td>HiFi Assembly Mix</td>
+      <td>15</td>
+      <td>15</td>
+        <td>15</td>
+    </tr>
+  </table>
     
     <u><b>Hifi assembly of HxlR constructs into pUC19 and pET28a(+)-FGF2</b></u>
     DNA HiFi assembly was conducted to assemble digested pUC19 and pET28a(+)-FGF2 vectors and our gene constructs to obtain recombinant plasmid.
