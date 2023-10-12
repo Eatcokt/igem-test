@@ -8,10 +8,14 @@
  
 <head>
   <style>
-    
+
+    .indented-ol {
+      padding-left: 20px; /* Adjust the value as needed */
+    }
+
     .table {
       display: table;
-      width: 100%;
+      width: 70%;
       border-collapse: collapse;
     }
     
@@ -31,30 +35,31 @@
 
     h1 {
       display: inline;
-      margin-top: 2em;
-      margin-bottom: 2em;
+      font-size: 26
+      margin-top: 1em;
+      margin-bottom: 1em;
     }
 
     h2 {
       display: inline;
       font-size: 25px;
-      margin-top: 2em;
-      margin-bottom: 2em;
+      margin-top: 1em;
+      margin-bottom: 1em;
     }
 
     h3 {
       display: inline;
       font-size: 20px;
-      margin-top: 2em;
-      margin-bottom: 2em;
+      margin-top: 1em;
+      margin-bottom: 1em;
 
     }
     
     h4 {
       display: inline;
       font-size: 16px;
-      margin-top: 2em;
-      margin-bottom: 2em; 
+      margin-top: 1em;
+      margin-bottom: 1em; 
     }
 
   </style>
@@ -73,7 +78,8 @@ pUC19 positive control DNA (Invitrogen), One Shot™ TOP10 Chemically Competent 
 </p>
 
 <h3>Procedures:</h3>
-<ol>
+
+  <ol class="indented-ol">
   <li>Mix 5 μL of DNA with 1 mL of competent cells in a polypropylene tube stored at -80°C.</li>
   <li>Incubate the tube on ice for 5 minutes.</li>
   <li>Heat shock the tube by exposing it to 42°C for 45 seconds.</li>
@@ -122,29 +128,30 @@ pUC19 positive control DNA (Invitrogen), One Shot™ TOP10 Chemically Competent 
     </div>
   </div>
 
-<img src="https://static.igem.wiki/teams/4813/wiki/yottkp-protocol1.png" style="width:700px; height:350px;">
 
 <h3><u>Gel purification of digested pUC19</u></h3>
 <p>Materials:</p>
-PureLink™ Quick Gel Extraction Kit (ThermoFisher, Cat# K210012) <br>
+<p>PureLink™ Quick Gel Extraction Kit (ThermoFisher, Cat# K210012)</p>
 <h3>Procedures:</h3>
-Refer to the manufacturer’s manual.
+<p>Refer to the manufacturer’s manual.</p>
 </a>
 <hr>
+
+<br>
 <h1>Cloning recombinant plasmids and introduce into host cells.</h1>
 <h3><u>Hifi assembly</u></h3>
 <p>Materials:</p>
-NEBuilder® HiFi DNA Assembly Master Mix (NEB, Cat# E2621S)<br>
+<p>NEBuilder® HiFi DNA Assembly Master Mix (NEB, Cat# E2621S)</p>
 <p>Procedures: </p>
-Refer to manufacturer’s manual.
+<p>Refer to manufacturer’s manual.</p>
+
+
 <br>
-
-
 <h3><u>Heat shock transformation of recombinant plasmid</u></h3>
 <p>Materials</p>
-One Shot™ TOP10 Chemically Competent <i>E. coli</i> (ThermoFisher, Cat# C404003), S.O.C Medium (ThermoFisher,, Cat#15544-034)
+<p>One Shot™ TOP10 Chemically Competent <i>E. coli</i> (ThermoFisher, Cat# C404003), S.O.C Medium (ThermoFisher, Cat#15544-034)</p>
 <p>Procedures:</p>
-<ol>
+  <ol class="indented-ol">
   <li>Combine 5 μl of recombinant plasmid with 1 ml of competent cells in a polypropylene tube stored at -80°C.</li>
   <li>Place the polypropylene tube on ice and incubate for 5 minutes.</li>
   <li>Conduct a heat shock by exposing the tube to 42°C for 45 seconds.</li>
@@ -154,26 +161,129 @@ One Shot™ TOP10 Chemically Competent <i>E. coli</i> (ThermoFisher, Cat# C40400
   <li>Spread the solution evenly across the plate and incubate at 37°C to promote bacterial growth.</li>
 </ol>
 <hr>
+
 <h1>Verification of the assembly</h1>
 <h3><u>Double enzyme digestion</u></h3>
 <p>Materials:</p>
-EcoR1-HF enzyme(NEB, #R3101S) , Xbal enzyme(NEB, #R0145S), CutSmart Buffer (NEB, Cat# B6004S)<br>
+<p>EcoR1-HF enzyme(NEB, #R3101S) , Xbal enzyme(NEB, #R0145S), CutSmart Buffer (NEB, Cat# B6004S)</p>
 <p>Procedures:</p>
-<img src="https://static.igem.wiki/teams/4813/wiki/yottkp-protocol2-2.png" style="width:700px;height:250px">
+ <ol class="indented-ol">
+  <li>Prepare reaction mixture according to the table below:</li>
+  <li>
+<div class="table">
+    <div class="table-row">
+      <div class="table-cell">Components</div>
+      <div class="table-cell">1X (µl)</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">EcoRI-HF</div>
+      <div class="table-cell">0.5</div>
+    </div>
+     <div class="table-row">
+      <div class="table-cell">XbaI</div>
+      <div class="table-cell">0.5</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">DNA (~0.5 ug/µl)</div>
+      <div class="table-cell">2</div>
+    </div>
+        <div class="table-row">
+      <div class="table-cell">10X CutSmart Buffer</div>
+      <div class="table-cell">2.5</div>
+    </div>
+        <div class="table-row">
+      <div class="table-cell">dH2O</div>
+      <div class="table-cell">19.5</div> 
+    </div>
+        <div class="table-row">
+      <div class="table-cell">Total Volume</div>
+      <div class="table-cell">25</div> 
+    </div>
+  </div>
+  </li>
+  <li> Incubate at 37oC for at least 1 hour.
+</ol>
+
+<br><br>
 <h3><u>Colony polymerase chain reaction (PCR)</u></h3>
 <p>Materials:</p>
-M13 forward and reverse primer (100uM, Tech Dragon), 
-OneTaq® 2X Master Mix with Standard Buffer (NEB, Cat# M0482S)
-<p>procedures:</p>
-<img src="https://static.igem.wiki/teams/4813/wiki/yottkp-protocol3-2.png"style="width:700px; height=""">
+<p>M13 forward and reverse primer (100uM, Tech Dragon), 
+OneTaq® 2X Master Mix with Standard Buffer (NEB, Cat# M0482S)</p>
+<p>Procedures:</p>
+
+ <ol class="indented-ol">
+  <li>Prepare mastermix of PCR reaction according to the table below:</li>
+  <li>
+<div class="table">
+    <div class="table-row">
+      <div class="table-cell">Components</div>
+      <div class="table-cell">1X (µl)</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">Forward Primer (10 µM)</div>
+      <div class="table-cell">0.5</div>
+    </div>
+     <div class="table-row">
+     <div class="table-cell">Reverse Primer (10 µM)</div>
+      <div class="table-cell">0.5</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">Template DNA</div>
+      <div class="table-cell">5</div>
+    </div>
+        <div class="table-row">
+      <div class="table-cell">OneTaq 2X MasterMix</div>
+      <div class="table-cell">12.5</div>
+    </div>
+        <div class="table-row">
+      <div class="table-cell">dH2O</div>
+      <div class="table-cell">6.5</div> 
+    </div>
+        <div class="table-row">
+      <div class="table-cell">Total Volume</div>
+      <div class="table-cell">25</div> 
+    </div>
+  </div>
+  </li>
+  <li>Run the PCR with the condition below for 25-30 cycles:</li>
+   <li>
+<div class="table">
+    <div class="table-row">
+      <div class="table-cell">Stage</div>
+      <div class="table-cell">Time (s)</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">Initial Denaturation (94°C)</div>
+      <div class="table-cell">300</div>
+    </div>
+     <div class="table-row">
+     <div class="table-cell">Denaturation (94°C)</div>
+      <div class="table-cell">25</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell">Annealing (55°C)</div>
+      <div class="table-cell">55</div>
+    </div>
+        <div class="table-row">
+      <div class="table-cell">Extension (68°C)</div>
+      <div class="table-cell">90</div>
+    </div>
+        <div class="table-row">
+      <div class="table-cell">Final extension (68°C)</div>
+      <div class="table-cell">300</div> 
+    </div>
+  </div>
+  </li> 
+
+
 <h3><u>Gel electrophoresis</u></h3>
 <p>Materials: </p>
-Gel Loading Dye Purple (6X) (NEB, #B7024S), 
+<p>Gel Loading Dye Purple (6X) (NEB, #B7024S), 
 Agarose (invitrogen ,#LOT0000695970) , 
 50 X TAE buffer (ThermoFisher, #LOT 00671729), 
-Quick-Load® Purple 1kb Plus DNA ladder (NEB,#LOT10034620)
-<p>procedures:</p>
-<ol>
+Quick-Load® Purple 1kb Plus DNA ladder (NEB,#LOT10034620)</p>
+<p>Procedures:</p>
+  <ol class="indented-ol">
   <li>Add 5μl of loading dye (LD) into each tube of DNA</li>
   <li>Add 25μl of distilled water into a new tube and 5μl of LD into the tube (negative control)</li>
   <li>Set up the gel tank:</li>
@@ -186,12 +296,15 @@ Quick-Load® Purple 1kb Plus DNA ladder (NEB,#LOT10034620)
   <li>Add the DNA and ladder into the wells.</li>
 </ol>
 <hr>
+
+<br>
 <h1>Functional assay of formaldehyde</h1>
+
 <p>Materiaals:</p>
-40% Formaldehyde solution (methanal) 
-LB broth (ThermoFisher)
-<p>procedures:</p>
-<ol>
+<p>40% Formaldehyde solution (methanal) 
+LB broth (ThermoFisher)</p>
+<p>Procedures:</p>
+  <ol class="indented-ol">
   <li>Dilute 40% formaldehyde to desired concentrations with LB broth solution</li>
   <li>Inoculate 10 mL of LB/Ampicillin broth with <i>E.coli</i> with formaldehyde solution to concentrations specified (500 uM and 1000 uM)</li>
   <li>Incubate for 12 hours</li>
